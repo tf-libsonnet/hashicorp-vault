@@ -16,7 +16,7 @@
 This repository contains [Jsonnet](https://jsonnet.org/) functions for generating resources and data sources for the
 [hashicorp/vault](https://registry.terraform.io/providers/hashicorp/vault) Terraform provider.
 
-Learn more about `tf.libsonnet` [here](https://docs.tflibsonnet.com/).
+Learn more about `tf.libsonnet` at [docs.tflibsonnet.com](https://docs.tflibsonnet.com/docs).
 
 > **IMPORTANT**
 >
@@ -43,13 +43,39 @@ jb install github.com/tf-libsonnet/hashicorp-vault@main
 You can then import the package in your Jsonnet code:
 
 ```jsonnet
-TODO
+// main.tf.json.jsonnet
+local vault = import 'github.com/tf-libsonnet/hashicorp-vault/main.libsonnet';
+
+vault.provider.new(address='https://my-vault.com:8200', src='hashicorp/vault')
++ vault.namespace.new('example', path='example')
 ```
 
 This will generate the following Terraform JSON :
 
 ```json
-TODO
+{
+   "provider": {
+      "vault": [
+         {
+            "address": "https://my-vault.com:8200"
+         }
+      ]
+   },
+   "resource": {
+      "vault_namespace": {
+         "example": {
+            "path": "example"
+         }
+      }
+   },
+   "terraform": {
+      "required_providers": {
+         "vault": {
+            "source": "hashicorp/vault"
+         }
+      }
+   }
+}
 ```
 
 Refer to the [reference docs](/docs/3.x/README.md) for a list of supported data sources and resources:
