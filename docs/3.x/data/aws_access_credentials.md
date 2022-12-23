@@ -1,0 +1,206 @@
+---
+permalink: /data/aws_access_credentials/
+---
+
+# data.aws_access_credentials
+
+`aws_access_credentials` represents the `vault_aws_access_credentials` Terraform data source.
+
+
+
+This package contains functions and utilities for setting up the data source using Jsonnet code.
+
+
+## Index
+
+* [`fn new()`](#fn-new)
+* [`fn newAttrs()`](#fn-newattrs)
+* [`fn withBackend()`](#fn-withbackend)
+* [`fn withNamespace()`](#fn-withnamespace)
+* [`fn withRegion()`](#fn-withregion)
+* [`fn withRole()`](#fn-withrole)
+* [`fn withRoleArn()`](#fn-withrolearn)
+* [`fn withTtl()`](#fn-withttl)
+* [`fn withType()`](#fn-withtype)
+
+## Fields
+
+### fn new
+
+```ts
+new()
+```
+
+
+`vault.data.aws_access_credentials.new` injects a new `data_vault_aws_access_credentials` Terraform `data source`
+block into the root module document.
+
+Additionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the
+resource. For example, if you added a new instance to the root using:
+
+    # arguments omitted for brevity
+    vault.data.aws_access_credentials.new('some_id')
+
+You can get the reference to the `id` field of the created `vault.data.aws_access_credentials` using the reference:
+
+    $._ref.data_vault_aws_access_credentials.some_id.get('id')
+
+This is the same as directly entering `"${ data_vault_aws_access_credentials.some_id.id }"` as the value.
+
+NOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,
+or `$` to refer to the root object. Instead, make an explicit outer object using `local`.
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block.
+  - `backend` (`string`): AWS Secret Backend to read credentials from.
+  - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `region` (`string`): Region the read credentials belong to. When `null`, the `region` field will be omitted from the resulting object.
+  - `role` (`string`): AWS Secret Role to read credentials from.
+  - `role_arn` (`string`): ARN to use if multiple are available in the role. Required if the role has multiple ARNs. When `null`, the `role_arn` field will be omitted from the resulting object.
+  - `ttl` (`string`): User specified Time-To-Live for the STS token. Uses the Role defined default_sts_ttl when not specified When `null`, the `ttl` field will be omitted from the resulting object.
+  - `type` (`string`): Type of credentials to read. Must be either &#39;creds&#39; for Access Key and Secret Key, or &#39;sts&#39; for STS. When `null`, the `type` field will be omitted from the resulting object.
+
+**Returns**:
+- A mixin object that injects the new data source into the root Terraform configuration.
+
+
+### fn newAttrs
+
+```ts
+newAttrs()
+```
+
+
+`vault.data.aws_access_credentials.newAttrs` constructs a new object with attributes and blocks configured for the `aws_access_credentials`
+Terraform data source.
+
+Unlike [vault.data.aws_access_credentials.new](#fn-new), this function will not inject the `data source`
+block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
+[tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
+
+This is most useful when you need to preprocess the attributes with functions, conditional, or looping logic prior to
+injecting into a complete block.
+
+**Args**:
+  - `backend` (`string`): AWS Secret Backend to read credentials from.
+  - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `region` (`string`): Region the read credentials belong to. When `null`, the `region` field will be omitted from the resulting object.
+  - `role` (`string`): AWS Secret Role to read credentials from.
+  - `role_arn` (`string`): ARN to use if multiple are available in the role. Required if the role has multiple ARNs. When `null`, the `role_arn` field will be omitted from the resulting object.
+  - `ttl` (`string`): User specified Time-To-Live for the STS token. Uses the Role defined default_sts_ttl when not specified When `null`, the `ttl` field will be omitted from the resulting object.
+  - `type` (`string`): Type of credentials to read. Must be either &#39;creds&#39; for Access Key and Secret Key, or &#39;sts&#39; for STS. When `null`, the `type` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `aws_access_credentials` data source into the root Terraform configuration.
+
+
+### fn withBackend
+
+```ts
+withBackend()
+```
+
+`vault.string.withBackend` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the backend field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `backend` field.
+
+
+### fn withNamespace
+
+```ts
+withNamespace()
+```
+
+`vault.string.withNamespace` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the namespace field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `namespace` field.
+
+
+### fn withRegion
+
+```ts
+withRegion()
+```
+
+`vault.string.withRegion` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the region field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `region` field.
+
+
+### fn withRole
+
+```ts
+withRole()
+```
+
+`vault.string.withRole` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the role field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `role` field.
+
+
+### fn withRoleArn
+
+```ts
+withRoleArn()
+```
+
+`vault.string.withRoleArn` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the role_arn field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `role_arn` field.
+
+
+### fn withTtl
+
+```ts
+withTtl()
+```
+
+`vault.string.withTtl` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the ttl field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `ttl` field.
+
+
+### fn withType
+
+```ts
+withType()
+```
+
+`vault.string.withType` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the type field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `type` field.
