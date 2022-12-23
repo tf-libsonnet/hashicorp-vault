@@ -1,20 +1,20 @@
-<h1 align="center">tf-libsonnet/PROVIDER_NAME</h1>
+<h1 align="center">tf-libsonnet/hashicorp-vault</h1>
 
 <p align="center">
   <em>Generate Terraform with Jsonnet</em>
 </p>
 
 <p align="center">
-  <a href="https://github.com/tf-libsonnet/PROVIDER_NAME/blob/main/LICENSE">
-    <img alt="LICENSE" src="https://img.shields.io/github/license/tf-libsonnet/PROVIDER_NAME?style=for-the-badge">
+  <a href="https://github.com/tf-libsonnet/hashicorp-vault/blob/main/LICENSE">
+    <img alt="LICENSE" src="https://img.shields.io/github/license/tf-libsonnet/hashicorp-vault?style=for-the-badge">
   </a>
-  <a href="https://github.com/tf-libsonnet/PROVIDER_NAME/releases/latest">
-    <img alt="latest release" src="https://img.shields.io/github/v/release/tf-libsonnet/PROVIDER_NAME?style=for-the-badge">
+  <a href="https://github.com/tf-libsonnet/hashicorp-vault/releases/latest">
+    <img alt="latest release" src="https://img.shields.io/github/v/release/tf-libsonnet/hashicorp-vault?style=for-the-badge">
   </a>
 </p>
 
 This repository contains [Jsonnet](https://jsonnet.org/) functions for generating resources and data sources for the
-[PROVIDER_NAME_SLASH](https://registry.terraform.io/providers/PROVIDER_NAME_SLASH) Terraform provider.
+[hashicorp/vault](https://registry.terraform.io/providers/hashicorp/vault) Terraform provider.
 
 Learn more about `tf.libsonnet` [here](https://docs.tflibsonnet.com/).
 
@@ -32,12 +32,12 @@ Learn more about `tf.libsonnet` [here](https://docs.tflibsonnet.com/).
 Install the package using [jsonnet-bundler](https://github.com/jsonnet-bundler/jsonnet-bundler):
 
 ```
-jb install github.com/tf-libsonnet/PROVIDER_NAME@main
+jb install github.com/tf-libsonnet/hashicorp-vault@main
 
 # Or if you want to install a specific release
-#   jb install github.com/tf-libsonnet/PROVIDER_NAME@v0.0.1
+#   jb install github.com/tf-libsonnet/hashicorp-vault@v0.0.1
 # Or if you want to install bindings for a specific provider major version series
-#   jb install github.com/tf-libsonnet/PROVIDER_NAME/MAJOR.x@main
+#   jb install github.com/tf-libsonnet/hashicorp-vault/3.x@main
 ```
 
 You can then import the package in your Jsonnet code:
@@ -52,11 +52,11 @@ This will generate the following Terraform JSON :
 TODO
 ```
 
-Refer to the [reference docs](/docs/MAJOR.x/README.md) for a list of supported data sources and resources:
+Refer to the [reference docs](/docs/3.x/README.md) for a list of supported data sources and resources:
 
-- [provider config](/docs/MAJOR.x/provider.md)
-- [resources](/docs/MAJOR.x/README.md)
-- [data sources](/docs/MAJOR.x/data/index.md)
+- [provider config](/docs/3.x/provider.md)
+- [resources](/docs/3.x/README.md)
+- [data sources](/docs/3.x/data/index.md)
 
 
 ## Support
