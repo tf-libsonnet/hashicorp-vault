@@ -16,6 +16,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withCas()`](#fn-withcas)
+* [`fn withCustomMetadata()`](#fn-withcustommetadata)
+* [`fn withCustomMetadataMixin()`](#fn-withcustommetadatamixin)
 * [`fn withDataJson()`](#fn-withdatajson)
 * [`fn withDeleteAllVersions()`](#fn-withdeleteallversions)
 * [`fn withDisableRead()`](#fn-withdisableread)
@@ -23,6 +25,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withName()`](#fn-withname)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withOptions()`](#fn-withoptions)
+* [`obj custom_metadata`](#obj-custom_metadata)
+  * [`fn new()`](#fn-custom_metadatanew)
 
 ## Fields
 
@@ -61,6 +65,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `name` (`string`): Full name of the secret. For a nested secret, the name is the nested path excluding the mount and data prefix. For example, for a secret at &#39;kvv2/data/foo/bar/baz&#39;, the name is &#39;foo/bar/baz&#39;
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `options` (`obj`): An object that holds option settings. When `null`, the `options` field will be omitted from the resulting object.
+  - `custom_metadata` (`list[obj]`): Custom metadata to be set for the secret. When `null`, the `custom_metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.kv_secret_v2.custom_metadata.new](#fn-custom_metadatanew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -92,6 +97,7 @@ injecting into a complete block.
   - `name` (`string`): Full name of the secret. For a nested secret, the name is the nested path excluding the mount and data prefix. For example, for a secret at &#39;kvv2/data/foo/bar/baz&#39;, the name is &#39;foo/bar/baz&#39;
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `options` (`obj`): An object that holds option settings. When `null`, the `options` field will be omitted from the resulting object.
+  - `custom_metadata` (`list[obj]`): Custom metadata to be set for the secret. When `null`, the `custom_metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.kv_secret_v2.custom_metadata.new](#fn-custom_metadatanew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `kv_secret_v2` resource into the root Terraform configuration.
@@ -111,6 +117,43 @@ Terraform resource block to set or update the cas field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`number`): The value to set for the `cas` field.
+
+
+### fn withCustomMetadata
+
+```ts
+withCustomMetadata()
+```
+
+`vault.list[obj].withCustomMetadata` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the custom_metadata field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [vault.list[obj].withCustomMetadataMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `custom_metadata` field.
+
+
+### fn withCustomMetadataMixin
+
+```ts
+withCustomMetadataMixin()
+```
+
+`vault.list[obj].withCustomMetadataMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the custom_metadata field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [vault.list[obj].withCustomMetadata](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `custom_metadata` field.
 
 
 ### fn withDataJson
@@ -223,3 +266,29 @@ Terraform resource block to set or update the options field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `options` field.
+
+
+## obj custom_metadata
+
+
+
+### fn custom_metadata.new
+
+```ts
+new()
+```
+
+
+`vault.kv_secret_v2.custom_metadata.new` constructs a new object with attributes and blocks configured for the `custom_metadata`
+Terraform sub block.
+
+
+
+**Args**:
+  - `cas_required` (`bool`): If true, all keys will require the cas parameter to be set on all write requests. When `null`, the `cas_required` field will be omitted from the resulting object.
+  - `data` (`obj`): A map of arbitrary string to string valued user-provided metadata meant to describe the secret. When `null`, the `data` field will be omitted from the resulting object.
+  - `delete_version_after` (`number`): If set, specifies the length of time before a version is deleted. When `null`, the `delete_version_after` field will be omitted from the resulting object.
+  - `max_versions` (`number`): The number of versions to keep per key. When `null`, the `max_versions` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `custom_metadata` sub block.

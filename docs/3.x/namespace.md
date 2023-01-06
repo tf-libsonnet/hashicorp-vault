@@ -17,6 +17,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPath()`](#fn-withpath)
+* [`fn withPathFq()`](#fn-withpathfq)
 
 ## Fields
 
@@ -49,6 +50,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Namespace path.
+  - `path_fq` (`string`): The fully qualified namespace path. When `null`, the `path_fq` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -74,6 +76,7 @@ injecting into a complete block.
 **Args**:
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Namespace path.
+  - `path_fq` (`string`): The fully qualified namespace path. When `null`, the `path_fq` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `namespace` resource into the root Terraform configuration.
@@ -109,3 +112,19 @@ Terraform resource block to set or update the path field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `path` field.
+
+
+### fn withPathFq
+
+```ts
+withPathFq()
+```
+
+`vault.string.withPathFq` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the path_fq field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `path_fq` field.
