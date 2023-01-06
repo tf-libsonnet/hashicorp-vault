@@ -28,6 +28,7 @@ permalink: /data/
 * [kv_secrets_list_v2](kv_secrets_list_v2.md)
 * [nomad_access_token](nomad_access_token.md)
 * [policy_document](policy_document.md)
+* [raft_autopilot_state](raft_autopilot_state.md)
 * [transform_decode](transform_decode.md)
 * [transform_encode](transform_encode.md)
 * [transit_decrypt](transit_decrypt.md)

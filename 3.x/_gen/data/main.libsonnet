@@ -23,6 +23,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   kv_secrets_list_v2: (import 'kv_secrets_list_v2.libsonnet'),
   nomad_access_token: (import 'nomad_access_token.libsonnet'),
   policy_document: (import 'policy_document.libsonnet'),
+  raft_autopilot_state: (import 'raft_autopilot_state.libsonnet'),
   transform_decode: (import 'transform_decode.libsonnet'),
   transform_encode: (import 'transform_encode.libsonnet'),
   transit_decrypt: (import 'transit_decrypt.libsonnet'),
