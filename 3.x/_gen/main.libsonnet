@@ -13,6 +13,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   auth_backend: (import 'resources/auth_backend.libsonnet'),
   aws_auth_backend_cert: (import 'resources/aws_auth_backend_cert.libsonnet'),
   aws_auth_backend_client: (import 'resources/aws_auth_backend_client.libsonnet'),
+  aws_auth_backend_config_identity: (import 'resources/aws_auth_backend_config_identity.libsonnet'),
   aws_auth_backend_identity_whitelist: (import 'resources/aws_auth_backend_identity_whitelist.libsonnet'),
   aws_auth_backend_login: (import 'resources/aws_auth_backend_login.libsonnet'),
   aws_auth_backend_role: (import 'resources/aws_auth_backend_role.libsonnet'),
