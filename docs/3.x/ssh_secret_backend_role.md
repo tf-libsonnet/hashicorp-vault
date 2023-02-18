@@ -34,6 +34,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDefaultCriticalOptions()`](#fn-withdefaultcriticaloptions)
 * [`fn withDefaultExtensions()`](#fn-withdefaultextensions)
 * [`fn withDefaultUser()`](#fn-withdefaultuser)
+* [`fn withDefaultUserTemplate()`](#fn-withdefaultusertemplate)
 * [`fn withKeyIdFormat()`](#fn-withkeyidformat)
 * [`fn withKeyType()`](#fn-withkeytype)
 * [`fn withMaxTtl()`](#fn-withmaxttl)
@@ -89,6 +90,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `default_critical_options` (`obj`): Set the `default_critical_options` field on the resulting resource block. When `null`, the `default_critical_options` field will be omitted from the resulting object.
   - `default_extensions` (`obj`): Set the `default_extensions` field on the resulting resource block. When `null`, the `default_extensions` field will be omitted from the resulting object.
   - `default_user` (`string`): Set the `default_user` field on the resulting resource block. When `null`, the `default_user` field will be omitted from the resulting object.
+  - `default_user_template` (`bool`): Set the `default_user_template` field on the resulting resource block. When `null`, the `default_user_template` field will be omitted from the resulting object.
   - `key_id_format` (`string`): Set the `key_id_format` field on the resulting resource block. When `null`, the `key_id_format` field will be omitted from the resulting object.
   - `key_type` (`string`): Set the `key_type` field on the resulting resource block.
   - `max_ttl` (`string`): Set the `max_ttl` field on the resulting resource block. When `null`, the `max_ttl` field will be omitted from the resulting object.
@@ -136,6 +138,7 @@ injecting into a complete block.
   - `default_critical_options` (`obj`): Set the `default_critical_options` field on the resulting object. When `null`, the `default_critical_options` field will be omitted from the resulting object.
   - `default_extensions` (`obj`): Set the `default_extensions` field on the resulting object. When `null`, the `default_extensions` field will be omitted from the resulting object.
   - `default_user` (`string`): Set the `default_user` field on the resulting object. When `null`, the `default_user` field will be omitted from the resulting object.
+  - `default_user_template` (`bool`): Set the `default_user_template` field on the resulting object. When `null`, the `default_user_template` field will be omitted from the resulting object.
   - `key_id_format` (`string`): Set the `key_id_format` field on the resulting object. When `null`, the `key_id_format` field will be omitted from the resulting object.
   - `key_type` (`string`): Set the `key_type` field on the resulting object.
   - `max_ttl` (`string`): Set the `max_ttl` field on the resulting object. When `null`, the `max_ttl` field will be omitted from the resulting object.
@@ -455,6 +458,22 @@ Terraform resource block to set or update the default_user field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `default_user` field.
+
+
+### fn withDefaultUserTemplate
+
+```ts
+withDefaultUserTemplate()
+```
+
+`vault.bool.withDefaultUserTemplate` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the default_user_template field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `default_user_template` field.
 
 
 ### fn withKeyIdFormat

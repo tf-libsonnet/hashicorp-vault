@@ -22,6 +22,7 @@ project.
 * [auth_backend](auth_backend.md)
 * [aws_auth_backend_cert](aws_auth_backend_cert.md)
 * [aws_auth_backend_client](aws_auth_backend_client.md)
+* [aws_auth_backend_config_identity](aws_auth_backend_config_identity.md)
 * [aws_auth_backend_identity_whitelist](aws_auth_backend_identity_whitelist.md)
 * [aws_auth_backend_login](aws_auth_backend_login.md)
 * [aws_auth_backend_role](aws_auth_backend_role.md)
