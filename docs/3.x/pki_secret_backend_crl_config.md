@@ -18,6 +18,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAutoRebuild()`](#fn-withautorebuild)
 * [`fn withAutoRebuildGracePeriod()`](#fn-withautorebuildgraceperiod)
 * [`fn withBackend()`](#fn-withbackend)
+* [`fn withCrossClusterRevocation()`](#fn-withcrossclusterrevocation)
 * [`fn withDeltaRebuildInterval()`](#fn-withdeltarebuildinterval)
 * [`fn withDisable()`](#fn-withdisable)
 * [`fn withEnableDelta()`](#fn-withenabledelta)
@@ -25,6 +26,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withOcspDisable()`](#fn-withocspdisable)
 * [`fn withOcspExpiry()`](#fn-withocspexpiry)
+* [`fn withUnifiedCrl()`](#fn-withunifiedcrl)
+* [`fn withUnifiedCrlOnExistingPaths()`](#fn-withunifiedcrlonexistingpaths)
 
 ## Fields
 
@@ -58,6 +61,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `auto_rebuild` (`bool`): Enables or disables periodic rebuilding of the CRL upon expiry. When `null`, the `auto_rebuild` field will be omitted from the resulting object.
   - `auto_rebuild_grace_period` (`string`): Grace period before CRL expiry to attempt rebuild of CRL. When `null`, the `auto_rebuild_grace_period` field will be omitted from the resulting object.
   - `backend` (`string`): The path of the PKI secret backend the resource belongs to.
+  - `cross_cluster_revocation` (`bool`): Enable cross-cluster revocation request queues. When `null`, the `cross_cluster_revocation` field will be omitted from the resulting object.
   - `delta_rebuild_interval` (`string`): Interval to check for new revocations on, to regenerate the delta CRL. When `null`, the `delta_rebuild_interval` field will be omitted from the resulting object.
   - `disable` (`bool`): Disables or enables CRL building When `null`, the `disable` field will be omitted from the resulting object.
   - `enable_delta` (`bool`): Enables or disables building of delta CRLs with up-to-date revocation information, augmenting the last complete CRL. When `null`, the `enable_delta` field will be omitted from the resulting object.
@@ -65,6 +69,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `ocsp_disable` (`bool`): Disables or enables the OCSP responder in Vault. When `null`, the `ocsp_disable` field will be omitted from the resulting object.
   - `ocsp_expiry` (`string`): The amount of time an OCSP response can be cached for, useful for OCSP stapling refresh durations. When `null`, the `ocsp_expiry` field will be omitted from the resulting object.
+  - `unified_crl` (`bool`): Enables unified CRL and OCSP building. When `null`, the `unified_crl` field will be omitted from the resulting object.
+  - `unified_crl_on_existing_paths` (`bool`): Enables serving the unified CRL and OCSP on the existing, previously cluster-local paths. When `null`, the `unified_crl_on_existing_paths` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -91,6 +97,7 @@ injecting into a complete block.
   - `auto_rebuild` (`bool`): Enables or disables periodic rebuilding of the CRL upon expiry. When `null`, the `auto_rebuild` field will be omitted from the resulting object.
   - `auto_rebuild_grace_period` (`string`): Grace period before CRL expiry to attempt rebuild of CRL. When `null`, the `auto_rebuild_grace_period` field will be omitted from the resulting object.
   - `backend` (`string`): The path of the PKI secret backend the resource belongs to.
+  - `cross_cluster_revocation` (`bool`): Enable cross-cluster revocation request queues. When `null`, the `cross_cluster_revocation` field will be omitted from the resulting object.
   - `delta_rebuild_interval` (`string`): Interval to check for new revocations on, to regenerate the delta CRL. When `null`, the `delta_rebuild_interval` field will be omitted from the resulting object.
   - `disable` (`bool`): Disables or enables CRL building When `null`, the `disable` field will be omitted from the resulting object.
   - `enable_delta` (`bool`): Enables or disables building of delta CRLs with up-to-date revocation information, augmenting the last complete CRL. When `null`, the `enable_delta` field will be omitted from the resulting object.
@@ -98,6 +105,8 @@ injecting into a complete block.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `ocsp_disable` (`bool`): Disables or enables the OCSP responder in Vault. When `null`, the `ocsp_disable` field will be omitted from the resulting object.
   - `ocsp_expiry` (`string`): The amount of time an OCSP response can be cached for, useful for OCSP stapling refresh durations. When `null`, the `ocsp_expiry` field will be omitted from the resulting object.
+  - `unified_crl` (`bool`): Enables unified CRL and OCSP building. When `null`, the `unified_crl` field will be omitted from the resulting object.
+  - `unified_crl_on_existing_paths` (`bool`): Enables serving the unified CRL and OCSP on the existing, previously cluster-local paths. When `null`, the `unified_crl_on_existing_paths` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `pki_secret_backend_crl_config` resource into the root Terraform configuration.
@@ -149,6 +158,22 @@ Terraform resource block to set or update the backend field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `backend` field.
+
+
+### fn withCrossClusterRevocation
+
+```ts
+withCrossClusterRevocation()
+```
+
+`vault.bool.withCrossClusterRevocation` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the cross_cluster_revocation field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `cross_cluster_revocation` field.
 
 
 ### fn withDeltaRebuildInterval
@@ -261,3 +286,35 @@ Terraform resource block to set or update the ocsp_expiry field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `ocsp_expiry` field.
+
+
+### fn withUnifiedCrl
+
+```ts
+withUnifiedCrl()
+```
+
+`vault.bool.withUnifiedCrl` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the unified_crl field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `unified_crl` field.
+
+
+### fn withUnifiedCrlOnExistingPaths
+
+```ts
+withUnifiedCrlOnExistingPaths()
+```
+
+`vault.bool.withUnifiedCrlOnExistingPaths` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the unified_crl_on_existing_paths field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `unified_crl_on_existing_paths` field.
