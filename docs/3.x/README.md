@@ -97,6 +97,8 @@ project.
 * [mfa_okta](mfa_okta.md)
 * [mfa_pingid](mfa_pingid.md)
 * [mfa_totp](mfa_totp.md)
+* [mongodbatlas_secret_backend](mongodbatlas_secret_backend.md)
+* [mongodbatlas_secret_role](mongodbatlas_secret_role.md)
 * [mount](mount.md)
 * [namespace](namespace.md)
 * [nomad_secret_backend](nomad_secret_backend.md)

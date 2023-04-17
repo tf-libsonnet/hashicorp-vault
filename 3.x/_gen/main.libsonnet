@@ -87,6 +87,8 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   mfa_okta: (import 'resources/mfa_okta.libsonnet'),
   mfa_pingid: (import 'resources/mfa_pingid.libsonnet'),
   mfa_totp: (import 'resources/mfa_totp.libsonnet'),
+  mongodbatlas_secret_backend: (import 'resources/mongodbatlas_secret_backend.libsonnet'),
+  mongodbatlas_secret_role: (import 'resources/mongodbatlas_secret_role.libsonnet'),
   mount: (import 'resources/mount.libsonnet'),
   namespace: (import 'resources/namespace.libsonnet'),
   nomad_secret_backend: (import 'resources/nomad_secret_backend.libsonnet'),
