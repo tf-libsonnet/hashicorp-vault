@@ -22,6 +22,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withMaxValidationAttempts()`](#fn-withmaxvalidationattempts)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPeriod()`](#fn-withperiod)
+* [`fn withQrSize()`](#fn-withqrsize)
 * [`fn withSkew()`](#fn-withskew)
 
 ## Fields
@@ -60,6 +61,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `max_validation_attempts` (`number`): The maximum number of consecutive failed validation attempts allowed. When `null`, the `max_validation_attempts` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `period` (`number`): The length of time in seconds used to generate a counter for the TOTP token calculation. When `null`, the `period` field will be omitted from the resulting object.
+  - `qr_size` (`number`): The pixel size of the generated square QR code. When `null`, the `qr_size` field will be omitted from the resulting object.
   - `skew` (`number`): The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1. When `null`, the `skew` field will be omitted from the resulting object.
 
 **Returns**:
@@ -91,6 +93,7 @@ injecting into a complete block.
   - `max_validation_attempts` (`number`): The maximum number of consecutive failed validation attempts allowed. When `null`, the `max_validation_attempts` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `period` (`number`): The length of time in seconds used to generate a counter for the TOTP token calculation. When `null`, the `period` field will be omitted from the resulting object.
+  - `qr_size` (`number`): The pixel size of the generated square QR code. When `null`, the `qr_size` field will be omitted from the resulting object.
   - `skew` (`number`): The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1. When `null`, the `skew` field will be omitted from the resulting object.
 
 **Returns**:
@@ -207,6 +210,22 @@ Terraform resource block to set or update the period field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`number`): The value to set for the `period` field.
+
+
+### fn withQrSize
+
+```ts
+withQrSize()
+```
+
+`vault.number.withQrSize` constructs a mixin object that can be merged into the `number`
+Terraform resource block to set or update the qr_size field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`number`): The value to set for the `qr_size` field.
 
 
 ### fn withSkew
