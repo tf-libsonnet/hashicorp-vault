@@ -23,6 +23,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAllowUserKeyIds()`](#fn-withallowuserkeyids)
 * [`fn withAllowedCriticalOptions()`](#fn-withallowedcriticaloptions)
 * [`fn withAllowedDomains()`](#fn-withalloweddomains)
+* [`fn withAllowedDomainsTemplate()`](#fn-withalloweddomainstemplate)
 * [`fn withAllowedExtensions()`](#fn-withallowedextensions)
 * [`fn withAllowedUserKeyConfig()`](#fn-withalloweduserkeyconfig)
 * [`fn withAllowedUserKeyConfigMixin()`](#fn-withalloweduserkeyconfigmixin)
@@ -81,6 +82,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `allow_user_key_ids` (`bool`): Set the `allow_user_key_ids` field on the resulting resource block. When `null`, the `allow_user_key_ids` field will be omitted from the resulting object.
   - `allowed_critical_options` (`string`): Set the `allowed_critical_options` field on the resulting resource block. When `null`, the `allowed_critical_options` field will be omitted from the resulting object.
   - `allowed_domains` (`string`): Set the `allowed_domains` field on the resulting resource block. When `null`, the `allowed_domains` field will be omitted from the resulting object.
+  - `allowed_domains_template` (`bool`): Set the `allowed_domains_template` field on the resulting resource block. When `null`, the `allowed_domains_template` field will be omitted from the resulting object.
   - `allowed_extensions` (`string`): Set the `allowed_extensions` field on the resulting resource block. When `null`, the `allowed_extensions` field will be omitted from the resulting object.
   - `allowed_user_key_lengths` (`obj`): Set the `allowed_user_key_lengths` field on the resulting resource block. When `null`, the `allowed_user_key_lengths` field will be omitted from the resulting object.
   - `allowed_users` (`string`): Set the `allowed_users` field on the resulting resource block. When `null`, the `allowed_users` field will be omitted from the resulting object.
@@ -129,6 +131,7 @@ injecting into a complete block.
   - `allow_user_key_ids` (`bool`): Set the `allow_user_key_ids` field on the resulting object. When `null`, the `allow_user_key_ids` field will be omitted from the resulting object.
   - `allowed_critical_options` (`string`): Set the `allowed_critical_options` field on the resulting object. When `null`, the `allowed_critical_options` field will be omitted from the resulting object.
   - `allowed_domains` (`string`): Set the `allowed_domains` field on the resulting object. When `null`, the `allowed_domains` field will be omitted from the resulting object.
+  - `allowed_domains_template` (`bool`): Set the `allowed_domains_template` field on the resulting object. When `null`, the `allowed_domains_template` field will be omitted from the resulting object.
   - `allowed_extensions` (`string`): Set the `allowed_extensions` field on the resulting object. When `null`, the `allowed_extensions` field will be omitted from the resulting object.
   - `allowed_user_key_lengths` (`obj`): Set the `allowed_user_key_lengths` field on the resulting object. When `null`, the `allowed_user_key_lengths` field will be omitted from the resulting object.
   - `allowed_users` (`string`): Set the `allowed_users` field on the resulting object. When `null`, the `allowed_users` field will be omitted from the resulting object.
@@ -277,6 +280,22 @@ Terraform resource block to set or update the allowed_domains field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `allowed_domains` field.
+
+
+### fn withAllowedDomainsTemplate
+
+```ts
+withAllowedDomainsTemplate()
+```
+
+`vault.bool.withAllowedDomainsTemplate` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the allowed_domains_template field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `allowed_domains_template` field.
 
 
 ### fn withAllowedExtensions
