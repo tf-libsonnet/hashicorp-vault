@@ -17,6 +17,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withBackend()`](#fn-withbackend)
 * [`fn withCreationStatements()`](#fn-withcreationstatements)
+* [`fn withCredentialConfig()`](#fn-withcredentialconfig)
+* [`fn withCredentialType()`](#fn-withcredentialtype)
 * [`fn withDbName()`](#fn-withdbname)
 * [`fn withDefaultTtl()`](#fn-withdefaultttl)
 * [`fn withMaxTtl()`](#fn-withmaxttl)
@@ -57,6 +59,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `backend` (`string`): The path of the Database Secret Backend the role belongs to.
   - `creation_statements` (`list`): Database statements to execute to create and configure a user.
+  - `credential_config` (`obj`): Specifies the configuration for the given credential_type. When `null`, the `credential_config` field will be omitted from the resulting object.
+  - `credential_type` (`string`): Specifies the type of credential that will be generated for the role. When `null`, the `credential_type` field will be omitted from the resulting object.
   - `db_name` (`string`): Database connection to use for this role.
   - `default_ttl` (`number`): Default TTL for leases associated with this role, in seconds. When `null`, the `default_ttl` field will be omitted from the resulting object.
   - `max_ttl` (`number`): Maximum TTL for leases associated with this role, in seconds. When `null`, the `max_ttl` field will be omitted from the resulting object.
@@ -90,6 +94,8 @@ injecting into a complete block.
 **Args**:
   - `backend` (`string`): The path of the Database Secret Backend the role belongs to.
   - `creation_statements` (`list`): Database statements to execute to create and configure a user.
+  - `credential_config` (`obj`): Specifies the configuration for the given credential_type. When `null`, the `credential_config` field will be omitted from the resulting object.
+  - `credential_type` (`string`): Specifies the type of credential that will be generated for the role. When `null`, the `credential_type` field will be omitted from the resulting object.
   - `db_name` (`string`): Database connection to use for this role.
   - `default_ttl` (`number`): Default TTL for leases associated with this role, in seconds. When `null`, the `default_ttl` field will be omitted from the resulting object.
   - `max_ttl` (`number`): Maximum TTL for leases associated with this role, in seconds. When `null`, the `max_ttl` field will be omitted from the resulting object.
@@ -133,6 +139,38 @@ Terraform resource block to set or update the creation_statements field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `creation_statements` field.
+
+
+### fn withCredentialConfig
+
+```ts
+withCredentialConfig()
+```
+
+`vault.obj.withCredentialConfig` constructs a mixin object that can be merged into the `obj`
+Terraform resource block to set or update the credential_config field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`obj`): The value to set for the `credential_config` field.
+
+
+### fn withCredentialType
+
+```ts
+withCredentialType()
+```
+
+`vault.string.withCredentialType` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the credential_type field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `credential_type` field.
 
 
 ### fn withDbName

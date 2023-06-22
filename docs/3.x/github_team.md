@@ -49,7 +49,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `backend` (`string`): Auth backend to which team mapping will be congigured. When `null`, the `backend` field will be omitted from the resulting object.
+  - `backend` (`string`): Auth backend to which team mapping will be configured. When `null`, the `backend` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `policies` (`list`): Policies to be assigned to this team. When `null`, the `policies` field will be omitted from the resulting object.
   - `team` (`string`): GitHub team name in &#34;slugified&#34; format.
@@ -76,7 +76,7 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `backend` (`string`): Auth backend to which team mapping will be congigured. When `null`, the `backend` field will be omitted from the resulting object.
+  - `backend` (`string`): Auth backend to which team mapping will be configured. When `null`, the `backend` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `policies` (`list`): Policies to be assigned to this team. When `null`, the `policies` field will be omitted from the resulting object.
   - `team` (`string`): GitHub team name in &#34;slugified&#34; format.

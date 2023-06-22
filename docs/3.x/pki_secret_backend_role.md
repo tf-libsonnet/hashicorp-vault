@@ -21,11 +21,13 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAllowIpSans()`](#fn-withallowipsans)
 * [`fn withAllowLocalhost()`](#fn-withallowlocalhost)
 * [`fn withAllowSubdomains()`](#fn-withallowsubdomains)
+* [`fn withAllowWildcardCertificates()`](#fn-withallowwildcardcertificates)
 * [`fn withAllowedDomains()`](#fn-withalloweddomains)
 * [`fn withAllowedDomainsTemplate()`](#fn-withalloweddomainstemplate)
 * [`fn withAllowedOtherSans()`](#fn-withallowedothersans)
 * [`fn withAllowedSerialNumbers()`](#fn-withallowedserialnumbers)
 * [`fn withAllowedUriSans()`](#fn-withallowedurisans)
+* [`fn withAllowedUriSansTemplate()`](#fn-withallowedurisanstemplate)
 * [`fn withBackend()`](#fn-withbackend)
 * [`fn withBasicConstraintsValidForNonCa()`](#fn-withbasicconstraintsvalidfornonca)
 * [`fn withClientFlag()`](#fn-withclientflag)
@@ -35,6 +37,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEnforceHostnames()`](#fn-withenforcehostnames)
 * [`fn withExtKeyUsage()`](#fn-withextkeyusage)
 * [`fn withGenerateLease()`](#fn-withgeneratelease)
+* [`fn withIssuerRef()`](#fn-withissuerref)
 * [`fn withKeyBits()`](#fn-withkeybits)
 * [`fn withKeyType()`](#fn-withkeytype)
 * [`fn withKeyUsage()`](#fn-withkeyusage)
@@ -95,11 +98,13 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `allow_ip_sans` (`bool`): Flag to allow IP SANs When `null`, the `allow_ip_sans` field will be omitted from the resulting object.
   - `allow_localhost` (`bool`): Flag to allow certificates for localhost. When `null`, the `allow_localhost` field will be omitted from the resulting object.
   - `allow_subdomains` (`bool`): Flag to allow certificates matching subdomains. When `null`, the `allow_subdomains` field will be omitted from the resulting object.
+  - `allow_wildcard_certificates` (`bool`): Flag to allow wildcard certificates When `null`, the `allow_wildcard_certificates` field will be omitted from the resulting object.
   - `allowed_domains` (`list`): The domains of the role. When `null`, the `allowed_domains` field will be omitted from the resulting object.
   - `allowed_domains_template` (`bool`): Flag to indicate that `allowed_domains` specifies a template expression (e.g. {{identity.entity.aliases.&lt;mount accessor&gt;.name}}) When `null`, the `allowed_domains_template` field will be omitted from the resulting object.
   - `allowed_other_sans` (`list`): Defines allowed custom SANs When `null`, the `allowed_other_sans` field will be omitted from the resulting object.
   - `allowed_serial_numbers` (`list`): Defines allowed Subject serial numbers. When `null`, the `allowed_serial_numbers` field will be omitted from the resulting object.
   - `allowed_uri_sans` (`list`): Defines allowed URI SANs When `null`, the `allowed_uri_sans` field will be omitted from the resulting object.
+  - `allowed_uri_sans_template` (`bool`): Flag to indicate that `allowed_uri_sans` specifies a template expression (e.g. {{identity.entity.aliases.&lt;mount accessor&gt;.name}}) When `null`, the `allowed_uri_sans_template` field will be omitted from the resulting object.
   - `backend` (`string`): The path of the PKI secret backend the resource belongs to.
   - `basic_constraints_valid_for_non_ca` (`bool`): Flag to mark basic constraints valid when issuing non-CA certificates. When `null`, the `basic_constraints_valid_for_non_ca` field will be omitted from the resulting object.
   - `client_flag` (`bool`): Flag to specify certificates for client use. When `null`, the `client_flag` field will be omitted from the resulting object.
@@ -109,6 +114,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `enforce_hostnames` (`bool`): Flag to allow only valid host names When `null`, the `enforce_hostnames` field will be omitted from the resulting object.
   - `ext_key_usage` (`list`): Specify the allowed extended key usage constraint on issued certificates. When `null`, the `ext_key_usage` field will be omitted from the resulting object.
   - `generate_lease` (`bool`): Flag to generate leases with certificates. When `null`, the `generate_lease` field will be omitted from the resulting object.
+  - `issuer_ref` (`string`): Specifies the default issuer of this request. When `null`, the `issuer_ref` field will be omitted from the resulting object.
   - `key_bits` (`number`): The number of bits of generated keys. When `null`, the `key_bits` field will be omitted from the resulting object.
   - `key_type` (`string`): The generated key type. When `null`, the `key_type` field will be omitted from the resulting object.
   - `key_usage` (`list`): Specify the allowed key usage constraint on issued certificates. When `null`, the `key_usage` field will be omitted from the resulting object.
@@ -159,11 +165,13 @@ injecting into a complete block.
   - `allow_ip_sans` (`bool`): Flag to allow IP SANs When `null`, the `allow_ip_sans` field will be omitted from the resulting object.
   - `allow_localhost` (`bool`): Flag to allow certificates for localhost. When `null`, the `allow_localhost` field will be omitted from the resulting object.
   - `allow_subdomains` (`bool`): Flag to allow certificates matching subdomains. When `null`, the `allow_subdomains` field will be omitted from the resulting object.
+  - `allow_wildcard_certificates` (`bool`): Flag to allow wildcard certificates When `null`, the `allow_wildcard_certificates` field will be omitted from the resulting object.
   - `allowed_domains` (`list`): The domains of the role. When `null`, the `allowed_domains` field will be omitted from the resulting object.
   - `allowed_domains_template` (`bool`): Flag to indicate that `allowed_domains` specifies a template expression (e.g. {{identity.entity.aliases.&lt;mount accessor&gt;.name}}) When `null`, the `allowed_domains_template` field will be omitted from the resulting object.
   - `allowed_other_sans` (`list`): Defines allowed custom SANs When `null`, the `allowed_other_sans` field will be omitted from the resulting object.
   - `allowed_serial_numbers` (`list`): Defines allowed Subject serial numbers. When `null`, the `allowed_serial_numbers` field will be omitted from the resulting object.
   - `allowed_uri_sans` (`list`): Defines allowed URI SANs When `null`, the `allowed_uri_sans` field will be omitted from the resulting object.
+  - `allowed_uri_sans_template` (`bool`): Flag to indicate that `allowed_uri_sans` specifies a template expression (e.g. {{identity.entity.aliases.&lt;mount accessor&gt;.name}}) When `null`, the `allowed_uri_sans_template` field will be omitted from the resulting object.
   - `backend` (`string`): The path of the PKI secret backend the resource belongs to.
   - `basic_constraints_valid_for_non_ca` (`bool`): Flag to mark basic constraints valid when issuing non-CA certificates. When `null`, the `basic_constraints_valid_for_non_ca` field will be omitted from the resulting object.
   - `client_flag` (`bool`): Flag to specify certificates for client use. When `null`, the `client_flag` field will be omitted from the resulting object.
@@ -173,6 +181,7 @@ injecting into a complete block.
   - `enforce_hostnames` (`bool`): Flag to allow only valid host names When `null`, the `enforce_hostnames` field will be omitted from the resulting object.
   - `ext_key_usage` (`list`): Specify the allowed extended key usage constraint on issued certificates. When `null`, the `ext_key_usage` field will be omitted from the resulting object.
   - `generate_lease` (`bool`): Flag to generate leases with certificates. When `null`, the `generate_lease` field will be omitted from the resulting object.
+  - `issuer_ref` (`string`): Specifies the default issuer of this request. When `null`, the `issuer_ref` field will be omitted from the resulting object.
   - `key_bits` (`number`): The number of bits of generated keys. When `null`, the `key_bits` field will be omitted from the resulting object.
   - `key_type` (`string`): The generated key type. When `null`, the `key_type` field will be omitted from the resulting object.
   - `key_usage` (`list`): Specify the allowed key usage constraint on issued certificates. When `null`, the `key_usage` field will be omitted from the resulting object.
@@ -295,6 +304,22 @@ Terraform resource block to set or update the allow_subdomains field.
   - `value` (`bool`): The value to set for the `allow_subdomains` field.
 
 
+### fn withAllowWildcardCertificates
+
+```ts
+withAllowWildcardCertificates()
+```
+
+`vault.bool.withAllowWildcardCertificates` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the allow_wildcard_certificates field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `allow_wildcard_certificates` field.
+
+
 ### fn withAllowedDomains
 
 ```ts
@@ -373,6 +398,22 @@ Terraform resource block to set or update the allowed_uri_sans field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `allowed_uri_sans` field.
+
+
+### fn withAllowedUriSansTemplate
+
+```ts
+withAllowedUriSansTemplate()
+```
+
+`vault.bool.withAllowedUriSansTemplate` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the allowed_uri_sans_template field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `allowed_uri_sans_template` field.
 
 
 ### fn withBackend
@@ -517,6 +558,22 @@ Terraform resource block to set or update the generate_lease field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `generate_lease` field.
+
+
+### fn withIssuerRef
+
+```ts
+withIssuerRef()
+```
+
+`vault.string.withIssuerRef` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the issuer_ref field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `issuer_ref` field.
 
 
 ### fn withKeyBits
