@@ -22,7 +22,10 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withExcludeCnFromSans()`](#fn-withexcludecnfromsans)
 * [`fn withFormat()`](#fn-withformat)
 * [`fn withIpSans()`](#fn-withipsans)
+* [`fn withIssuerName()`](#fn-withissuername)
 * [`fn withKeyBits()`](#fn-withkeybits)
+* [`fn withKeyName()`](#fn-withkeyname)
+* [`fn withKeyRef()`](#fn-withkeyref)
 * [`fn withKeyType()`](#fn-withkeytype)
 * [`fn withLocality()`](#fn-withlocality)
 * [`fn withManagedKeyId()`](#fn-withmanagedkeyid)
@@ -77,7 +80,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `exclude_cn_from_sans` (`bool`): Flag to exclude CN from SANs. When `null`, the `exclude_cn_from_sans` field will be omitted from the resulting object.
   - `format` (`string`): The format of data. When `null`, the `format` field will be omitted from the resulting object.
   - `ip_sans` (`list`): List of alternative IPs. When `null`, the `ip_sans` field will be omitted from the resulting object.
+  - `issuer_name` (`string`): Provides a name to the specified issuer. The name must be unique across all issuers and not be the reserved value &#39;default&#39;. When `null`, the `issuer_name` field will be omitted from the resulting object.
   - `key_bits` (`number`): The number of bits to use. When `null`, the `key_bits` field will be omitted from the resulting object.
+  - `key_name` (`string`): When a new key is created with this request, optionally specifies the name for this. When `null`, the `key_name` field will be omitted from the resulting object.
+  - `key_ref` (`string`): Specifies the key to use for generating this request. When `null`, the `key_ref` field will be omitted from the resulting object.
   - `key_type` (`string`): The desired key type. When `null`, the `key_type` field will be omitted from the resulting object.
   - `locality` (`string`): The locality. When `null`, the `locality` field will be omitted from the resulting object.
   - `managed_key_id` (`string`): The ID of the previously configured managed key. When `null`, the `managed_key_id` field will be omitted from the resulting object.
@@ -93,7 +99,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `province` (`string`): The province. When `null`, the `province` field will be omitted from the resulting object.
   - `street_address` (`string`): The street address. When `null`, the `street_address` field will be omitted from the resulting object.
   - `ttl` (`string`): Time to live. When `null`, the `ttl` field will be omitted from the resulting object.
-  - `type` (`string`): Type of root to create. Must be either &#34;exported&#34; or &#34;internal&#34;.
+  - `type` (`string`): Type of root to create. Must be either &#34;existing&#34;, &#34;exported&#34;, &#34;internal&#34; or &#34;kms&#34;
   - `uri_sans` (`list`): List of alternative URIs. When `null`, the `uri_sans` field will be omitted from the resulting object.
 
 **Returns**:
@@ -125,7 +131,10 @@ injecting into a complete block.
   - `exclude_cn_from_sans` (`bool`): Flag to exclude CN from SANs. When `null`, the `exclude_cn_from_sans` field will be omitted from the resulting object.
   - `format` (`string`): The format of data. When `null`, the `format` field will be omitted from the resulting object.
   - `ip_sans` (`list`): List of alternative IPs. When `null`, the `ip_sans` field will be omitted from the resulting object.
+  - `issuer_name` (`string`): Provides a name to the specified issuer. The name must be unique across all issuers and not be the reserved value &#39;default&#39;. When `null`, the `issuer_name` field will be omitted from the resulting object.
   - `key_bits` (`number`): The number of bits to use. When `null`, the `key_bits` field will be omitted from the resulting object.
+  - `key_name` (`string`): When a new key is created with this request, optionally specifies the name for this. When `null`, the `key_name` field will be omitted from the resulting object.
+  - `key_ref` (`string`): Specifies the key to use for generating this request. When `null`, the `key_ref` field will be omitted from the resulting object.
   - `key_type` (`string`): The desired key type. When `null`, the `key_type` field will be omitted from the resulting object.
   - `locality` (`string`): The locality. When `null`, the `locality` field will be omitted from the resulting object.
   - `managed_key_id` (`string`): The ID of the previously configured managed key. When `null`, the `managed_key_id` field will be omitted from the resulting object.
@@ -141,7 +150,7 @@ injecting into a complete block.
   - `province` (`string`): The province. When `null`, the `province` field will be omitted from the resulting object.
   - `street_address` (`string`): The street address. When `null`, the `street_address` field will be omitted from the resulting object.
   - `ttl` (`string`): Time to live. When `null`, the `ttl` field will be omitted from the resulting object.
-  - `type` (`string`): Type of root to create. Must be either &#34;exported&#34; or &#34;internal&#34;.
+  - `type` (`string`): Type of root to create. Must be either &#34;existing&#34;, &#34;exported&#34;, &#34;internal&#34; or &#34;kms&#34;
   - `uri_sans` (`list`): List of alternative URIs. When `null`, the `uri_sans` field will be omitted from the resulting object.
 
 **Returns**:
@@ -260,6 +269,22 @@ Terraform resource block to set or update the ip_sans field.
   - `value` (`list`): The value to set for the `ip_sans` field.
 
 
+### fn withIssuerName
+
+```ts
+withIssuerName()
+```
+
+`vault.string.withIssuerName` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the issuer_name field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `issuer_name` field.
+
+
 ### fn withKeyBits
 
 ```ts
@@ -274,6 +299,38 @@ Terraform resource block to set or update the key_bits field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`number`): The value to set for the `key_bits` field.
+
+
+### fn withKeyName
+
+```ts
+withKeyName()
+```
+
+`vault.string.withKeyName` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the key_name field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `key_name` field.
+
+
+### fn withKeyRef
+
+```ts
+withKeyRef()
+```
+
+`vault.string.withKeyRef` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the key_ref field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `key_ref` field.
 
 
 ### fn withKeyType

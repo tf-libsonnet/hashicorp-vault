@@ -23,6 +23,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withExcludeCnFromSans()`](#fn-withexcludecnfromsans)
 * [`fn withFormat()`](#fn-withformat)
 * [`fn withIpSans()`](#fn-withipsans)
+* [`fn withIssuerRef()`](#fn-withissuerref)
 * [`fn withMinSecondsRemaining()`](#fn-withminsecondsremaining)
 * [`fn withName()`](#fn-withname)
 * [`fn withNamespace()`](#fn-withnamespace)
@@ -67,6 +68,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `exclude_cn_from_sans` (`bool`): Flag to exclude CN from SANs. When `null`, the `exclude_cn_from_sans` field will be omitted from the resulting object.
   - `format` (`string`): The format of data. When `null`, the `format` field will be omitted from the resulting object.
   - `ip_sans` (`list`): List of alternative IPs. When `null`, the `ip_sans` field will be omitted from the resulting object.
+  - `issuer_ref` (`string`): Specifies the default issuer of this request. When `null`, the `issuer_ref` field will be omitted from the resulting object.
   - `min_seconds_remaining` (`number`): Generate a new certificate when the expiration is within this number of seconds When `null`, the `min_seconds_remaining` field will be omitted from the resulting object.
   - `name` (`string`): Name of the role to create the certificate against.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
@@ -104,6 +106,7 @@ injecting into a complete block.
   - `exclude_cn_from_sans` (`bool`): Flag to exclude CN from SANs. When `null`, the `exclude_cn_from_sans` field will be omitted from the resulting object.
   - `format` (`string`): The format of data. When `null`, the `format` field will be omitted from the resulting object.
   - `ip_sans` (`list`): List of alternative IPs. When `null`, the `ip_sans` field will be omitted from the resulting object.
+  - `issuer_ref` (`string`): Specifies the default issuer of this request. When `null`, the `issuer_ref` field will be omitted from the resulting object.
   - `min_seconds_remaining` (`number`): Generate a new certificate when the expiration is within this number of seconds When `null`, the `min_seconds_remaining` field will be omitted from the resulting object.
   - `name` (`string`): Name of the role to create the certificate against.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
@@ -241,6 +244,22 @@ Terraform resource block to set or update the ip_sans field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `ip_sans` field.
+
+
+### fn withIssuerRef
+
+```ts
+withIssuerRef()
+```
+
+`vault.string.withIssuerRef` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the issuer_ref field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `issuer_ref` field.
 
 
 ### fn withMinSecondsRemaining

@@ -30,6 +30,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withGroupfilter()`](#fn-withgroupfilter)
 * [`fn withInsecureTls()`](#fn-withinsecuretls)
 * [`fn withLocal()`](#fn-withlocal)
+* [`fn withMaxPageSize()`](#fn-withmaxpagesize)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPath()`](#fn-withpath)
 * [`fn withStarttls()`](#fn-withstarttls)
@@ -96,6 +97,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `groupfilter` (`string`): Set the `groupfilter` field on the resulting resource block. When `null`, the `groupfilter` field will be omitted from the resulting object.
   - `insecure_tls` (`bool`): Set the `insecure_tls` field on the resulting resource block. When `null`, the `insecure_tls` field will be omitted from the resulting object.
   - `local_` (`bool`): Specifies if the auth method is local only When `null`, the `local_` field will be omitted from the resulting object.
+  - `max_page_size` (`number`): Set the `max_page_size` field on the resulting resource block. When `null`, the `max_page_size` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Set the `path` field on the resulting resource block. When `null`, the `path` field will be omitted from the resulting object.
   - `starttls` (`bool`): Set the `starttls` field on the resulting resource block. When `null`, the `starttls` field will be omitted from the resulting object.
@@ -155,6 +157,7 @@ injecting into a complete block.
   - `groupfilter` (`string`): Set the `groupfilter` field on the resulting object. When `null`, the `groupfilter` field will be omitted from the resulting object.
   - `insecure_tls` (`bool`): Set the `insecure_tls` field on the resulting object. When `null`, the `insecure_tls` field will be omitted from the resulting object.
   - `local_` (`bool`): Specifies if the auth method is local only When `null`, the `local_` field will be omitted from the resulting object.
+  - `max_page_size` (`number`): Set the `max_page_size` field on the resulting object. When `null`, the `max_page_size` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Set the `path` field on the resulting object. When `null`, the `path` field will be omitted from the resulting object.
   - `starttls` (`bool`): Set the `starttls` field on the resulting object. When `null`, the `starttls` field will be omitted from the resulting object.
@@ -419,6 +422,22 @@ Terraform resource block to set or update the local field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `local` field.
+
+
+### fn withMaxPageSize
+
+```ts
+withMaxPageSize()
+```
+
+`vault.number.withMaxPageSize` constructs a mixin object that can be merged into the `number`
+Terraform resource block to set or update the max_page_size field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`number`): The value to set for the `max_page_size` field.
 
 
 ### fn withNamespace
