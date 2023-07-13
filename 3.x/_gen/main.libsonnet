@@ -104,6 +104,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   password_policy: (import 'resources/password_policy.libsonnet'),
   pki_secret_backend_cert: (import 'resources/pki_secret_backend_cert.libsonnet'),
   pki_secret_backend_config_ca: (import 'resources/pki_secret_backend_config_ca.libsonnet'),
+  pki_secret_backend_config_issuers: (import 'resources/pki_secret_backend_config_issuers.libsonnet'),
   pki_secret_backend_config_urls: (import 'resources/pki_secret_backend_config_urls.libsonnet'),
   pki_secret_backend_crl_config: (import 'resources/pki_secret_backend_crl_config.libsonnet'),
   pki_secret_backend_intermediate_cert_request: (import 'resources/pki_secret_backend_intermediate_cert_request.libsonnet'),

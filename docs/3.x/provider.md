@@ -35,6 +35,8 @@ This package contains functions and utilities for setting up the provider using 
   * [`fn new()`](#fn-auth_login_oidcnew)
 * [`obj auth_login_radius`](#obj-auth_login_radius)
   * [`fn new()`](#fn-auth_login_radiusnew)
+* [`obj auth_login_token_file`](#obj-auth_login_token_file)
+  * [`fn new()`](#fn-auth_login_token_filenew)
 * [`obj auth_login_userpass`](#obj-auth_login_userpass)
   * [`fn new()`](#fn-auth_login_userpassnew)
 * [`obj client_auth`](#obj-client_auth)
@@ -84,6 +86,7 @@ the `src` and/or `version` parameters are set.
   - `auth_login_oci` (`list[obj]`): Login to vault using the OCI method When `null`, the `auth_login_oci` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_oci.new](#fn-vaultauthloginocinew) constructor.
   - `auth_login_oidc` (`list[obj]`): Login to vault using the oidc method When `null`, the `auth_login_oidc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_oidc.new](#fn-vaultauthloginoidcnew) constructor.
   - `auth_login_radius` (`list[obj]`): Login to vault using the radius method When `null`, the `auth_login_radius` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_radius.new](#fn-vaultauthloginradiusnew) constructor.
+  - `auth_login_token_file` (`list[obj]`): Login to vault using  When `null`, the `auth_login_token_file` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_token_file.new](#fn-vaultauthlogintokenfilenew) constructor.
   - `auth_login_userpass` (`list[obj]`): Login to vault using the userpass method When `null`, the `auth_login_userpass` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_userpass.new](#fn-vaultauthloginuserpassnew) constructor.
   - `client_auth` (`list[obj]`): Client authentication credentials. When `null`, the `client_auth` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.client_auth.new](#fn-vaultclientauthnew) constructor.
   - `headers` (`list[obj]`): The headers to send with each Vault request. When `null`, the `headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.headers.new](#fn-vaultheadersnew) constructor.
@@ -143,6 +146,7 @@ injecting into a complete block.
   - `auth_login_oci` (`list[obj]`): Login to vault using the OCI method When `null`, the `auth_login_oci` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_oci.new](#fn-vaultauthloginocinew) constructor.
   - `auth_login_oidc` (`list[obj]`): Login to vault using the oidc method When `null`, the `auth_login_oidc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_oidc.new](#fn-vaultauthloginoidcnew) constructor.
   - `auth_login_radius` (`list[obj]`): Login to vault using the radius method When `null`, the `auth_login_radius` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_radius.new](#fn-vaultauthloginradiusnew) constructor.
+  - `auth_login_token_file` (`list[obj]`): Login to vault using  When `null`, the `auth_login_token_file` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_token_file.new](#fn-vaultauthlogintokenfilenew) constructor.
   - `auth_login_userpass` (`list[obj]`): Login to vault using the userpass method When `null`, the `auth_login_userpass` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.auth_login_userpass.new](#fn-vaultauthloginuserpassnew) constructor.
   - `client_auth` (`list[obj]`): Client authentication credentials. When `null`, the `client_auth` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.client_auth.new](#fn-vaultclientauthnew) constructor.
   - `headers` (`list[obj]`): The headers to send with each Vault request. When `null`, the `headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.provider.headers.new](#fn-vaultheadersnew) constructor.
@@ -438,6 +442,30 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `auth_login_radius` sub block.
+
+
+## obj auth_login_token_file
+
+
+
+### fn auth_login_token_file.new
+
+```ts
+new()
+```
+
+
+`vault.auth_login_token_file.new` constructs a new object with attributes and blocks configured for the `auth_login_token_file`
+Terraform sub block.
+
+
+
+**Args**:
+  - `filename` (`string`): The name of a file containing a single line that is a valid Vault token
+  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `auth_login_token_file` sub block.
 
 
 ## obj auth_login_userpass

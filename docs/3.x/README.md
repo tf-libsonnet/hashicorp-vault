@@ -114,6 +114,7 @@ project.
 * [password_policy](password_policy.md)
 * [pki_secret_backend_cert](pki_secret_backend_cert.md)
 * [pki_secret_backend_config_ca](pki_secret_backend_config_ca.md)
+* [pki_secret_backend_config_issuers](pki_secret_backend_config_issuers.md)
 * [pki_secret_backend_config_urls](pki_secret_backend_config_urls.md)
 * [pki_secret_backend_crl_config](pki_secret_backend_crl_config.md)
 * [pki_secret_backend_intermediate_cert_request](pki_secret_backend_intermediate_cert_request.md)
