@@ -31,6 +31,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withRevoke()`](#fn-withrevoke)
 * [`fn withTtl()`](#fn-withttl)
 * [`fn withUriSans()`](#fn-withurisans)
+* [`fn withUserIds()`](#fn-withuserids)
 
 ## Fields
 
@@ -77,6 +78,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `revoke` (`bool`): Revoke the certificate upon resource destruction. When `null`, the `revoke` field will be omitted from the resulting object.
   - `ttl` (`string`): Time to live. When `null`, the `ttl` field will be omitted from the resulting object.
   - `uri_sans` (`list`): List of alternative URIs. When `null`, the `uri_sans` field will be omitted from the resulting object.
+  - `user_ids` (`list`): List of Subject User IDs. When `null`, the `user_ids` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -116,6 +118,7 @@ injecting into a complete block.
   - `revoke` (`bool`): Revoke the certificate upon resource destruction. When `null`, the `revoke` field will be omitted from the resulting object.
   - `ttl` (`string`): Time to live. When `null`, the `ttl` field will be omitted from the resulting object.
   - `uri_sans` (`list`): List of alternative URIs. When `null`, the `uri_sans` field will be omitted from the resulting object.
+  - `user_ids` (`list`): List of Subject User IDs. When `null`, the `user_ids` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `pki_secret_backend_cert` resource into the root Terraform configuration.
@@ -375,3 +378,19 @@ Terraform resource block to set or update the uri_sans field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `uri_sans` field.
+
+
+### fn withUserIds
+
+```ts
+withUserIds()
+```
+
+`vault.list.withUserIds` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the user_ids field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `user_ids` field.

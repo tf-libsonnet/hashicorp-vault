@@ -20,6 +20,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEc2Metadata()`](#fn-withec2metadata)
 * [`fn withIamAlias()`](#fn-withiamalias)
 * [`fn withIamMetadata()`](#fn-withiammetadata)
+* [`fn withNamespace()`](#fn-withnamespace)
 
 ## Fields
 
@@ -55,6 +56,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `ec2_metadata` (`list`): The metadata to include on the token returned by the login endpoint. When `null`, the `ec2_metadata` field will be omitted from the resulting object.
   - `iam_alias` (`string`): How to generate the identity alias when using the iam auth method. When `null`, the `iam_alias` field will be omitted from the resulting object.
   - `iam_metadata` (`list`): The metadata to include on the token returned by the login endpoint. When `null`, the `iam_metadata` field will be omitted from the resulting object.
+  - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -83,6 +85,7 @@ injecting into a complete block.
   - `ec2_metadata` (`list`): The metadata to include on the token returned by the login endpoint. When `null`, the `ec2_metadata` field will be omitted from the resulting object.
   - `iam_alias` (`string`): How to generate the identity alias when using the iam auth method. When `null`, the `iam_alias` field will be omitted from the resulting object.
   - `iam_metadata` (`list`): The metadata to include on the token returned by the login endpoint. When `null`, the `iam_metadata` field will be omitted from the resulting object.
+  - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `aws_auth_backend_config_identity` resource into the root Terraform configuration.
@@ -166,3 +169,19 @@ Terraform resource block to set or update the iam_metadata field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `iam_metadata` field.
+
+
+### fn withNamespace
+
+```ts
+withNamespace()
+```
+
+`vault.string.withNamespace` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the namespace field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `namespace` field.
