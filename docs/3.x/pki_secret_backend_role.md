@@ -28,6 +28,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAllowedSerialNumbers()`](#fn-withallowedserialnumbers)
 * [`fn withAllowedUriSans()`](#fn-withallowedurisans)
 * [`fn withAllowedUriSansTemplate()`](#fn-withallowedurisanstemplate)
+* [`fn withAllowedUserIds()`](#fn-withalloweduserids)
 * [`fn withBackend()`](#fn-withbackend)
 * [`fn withBasicConstraintsValidForNonCa()`](#fn-withbasicconstraintsvalidfornonca)
 * [`fn withClientFlag()`](#fn-withclientflag)
@@ -105,6 +106,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `allowed_serial_numbers` (`list`): Defines allowed Subject serial numbers. When `null`, the `allowed_serial_numbers` field will be omitted from the resulting object.
   - `allowed_uri_sans` (`list`): Defines allowed URI SANs When `null`, the `allowed_uri_sans` field will be omitted from the resulting object.
   - `allowed_uri_sans_template` (`bool`): Flag to indicate that `allowed_uri_sans` specifies a template expression (e.g. {{identity.entity.aliases.&lt;mount accessor&gt;.name}}) When `null`, the `allowed_uri_sans_template` field will be omitted from the resulting object.
+  - `allowed_user_ids` (`list`): The allowed User ID&#39;s. When `null`, the `allowed_user_ids` field will be omitted from the resulting object.
   - `backend` (`string`): The path of the PKI secret backend the resource belongs to.
   - `basic_constraints_valid_for_non_ca` (`bool`): Flag to mark basic constraints valid when issuing non-CA certificates. When `null`, the `basic_constraints_valid_for_non_ca` field will be omitted from the resulting object.
   - `client_flag` (`bool`): Flag to specify certificates for client use. When `null`, the `client_flag` field will be omitted from the resulting object.
@@ -172,6 +174,7 @@ injecting into a complete block.
   - `allowed_serial_numbers` (`list`): Defines allowed Subject serial numbers. When `null`, the `allowed_serial_numbers` field will be omitted from the resulting object.
   - `allowed_uri_sans` (`list`): Defines allowed URI SANs When `null`, the `allowed_uri_sans` field will be omitted from the resulting object.
   - `allowed_uri_sans_template` (`bool`): Flag to indicate that `allowed_uri_sans` specifies a template expression (e.g. {{identity.entity.aliases.&lt;mount accessor&gt;.name}}) When `null`, the `allowed_uri_sans_template` field will be omitted from the resulting object.
+  - `allowed_user_ids` (`list`): The allowed User ID&#39;s. When `null`, the `allowed_user_ids` field will be omitted from the resulting object.
   - `backend` (`string`): The path of the PKI secret backend the resource belongs to.
   - `basic_constraints_valid_for_non_ca` (`bool`): Flag to mark basic constraints valid when issuing non-CA certificates. When `null`, the `basic_constraints_valid_for_non_ca` field will be omitted from the resulting object.
   - `client_flag` (`bool`): Flag to specify certificates for client use. When `null`, the `client_flag` field will be omitted from the resulting object.
@@ -414,6 +417,22 @@ Terraform resource block to set or update the allowed_uri_sans_template field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `allowed_uri_sans_template` field.
+
+
+### fn withAllowedUserIds
+
+```ts
+withAllowedUserIds()
+```
+
+`vault.list.withAllowedUserIds` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the allowed_user_ids field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `allowed_user_ids` field.
 
 
 ### fn withBackend
