@@ -21,6 +21,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPath()`](#fn-withpath)
 * [`fn withRate()`](#fn-withrate)
+* [`fn withRole()`](#fn-withrole)
 
 ## Fields
 
@@ -57,6 +58,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Path of the mount or namespace to apply the quota. A blank path configures a global rate limit quota. When `null`, the `path` field will be omitted from the resulting object.
   - `rate` (`number`): The maximum number of requests at any given second to be allowed by the quota rule. The rate must be positive.
+  - `role` (`string`): If set on a quota where path is set to an auth mount with a concept of roles (such as /auth/approle/), this will make the quota restrict login requests to that mount that are made with the specified role. When `null`, the `role` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -86,6 +88,7 @@ injecting into a complete block.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Path of the mount or namespace to apply the quota. A blank path configures a global rate limit quota. When `null`, the `path` field will be omitted from the resulting object.
   - `rate` (`number`): The maximum number of requests at any given second to be allowed by the quota rule. The rate must be positive.
+  - `role` (`string`): If set on a quota where path is set to an auth mount with a concept of roles (such as /auth/approle/), this will make the quota restrict login requests to that mount that are made with the specified role. When `null`, the `role` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `quota_rate_limit` resource into the root Terraform configuration.
@@ -185,3 +188,19 @@ Terraform resource block to set or update the rate field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`number`): The value to set for the `rate` field.
+
+
+### fn withRole
+
+```ts
+withRole()
+```
+
+`vault.string.withRole` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the role field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `role` field.
