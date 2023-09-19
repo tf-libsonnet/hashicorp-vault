@@ -24,6 +24,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDescription()`](#fn-withdescription)
 * [`fn withMaxTtl()`](#fn-withmaxttl)
 * [`fn withNamespace()`](#fn-withnamespace)
+* [`fn withPermanentlyDelete()`](#fn-withpermanentlydelete)
 * [`fn withRole()`](#fn-withrole)
 * [`fn withTtl()`](#fn-withttl)
 * [`obj azure_groups`](#obj-azure_groups)
@@ -65,6 +66,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`): Human-friendly description of the mount for the backend. When `null`, the `description` field will be omitted from the resulting object.
   - `max_ttl` (`string`): Human-friendly description of the mount for the backend. When `null`, the `max_ttl` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `permanently_delete` (`bool`): Indicates whether the applications and service principals created by Vault will be permanently deleted when the corresponding leases expire. When `null`, the `permanently_delete` field will be omitted from the resulting object.
   - `role` (`string`): Name of the role to create
   - `ttl` (`string`): Human-friendly description of the mount for the backend. When `null`, the `ttl` field will be omitted from the resulting object.
   - `azure_groups` (`list[obj]`): Set the `azure_groups` field on the resulting resource block. When `null`, the `azure_groups` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.azure_secret_backend_role.azure_groups.new](#fn-azure_groupsnew) constructor.
@@ -97,6 +99,7 @@ injecting into a complete block.
   - `description` (`string`): Human-friendly description of the mount for the backend. When `null`, the `description` field will be omitted from the resulting object.
   - `max_ttl` (`string`): Human-friendly description of the mount for the backend. When `null`, the `max_ttl` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `permanently_delete` (`bool`): Indicates whether the applications and service principals created by Vault will be permanently deleted when the corresponding leases expire. When `null`, the `permanently_delete` field will be omitted from the resulting object.
   - `role` (`string`): Name of the role to create
   - `ttl` (`string`): Human-friendly description of the mount for the backend. When `null`, the `ttl` field will be omitted from the resulting object.
   - `azure_groups` (`list[obj]`): Set the `azure_groups` field on the resulting object. When `null`, the `azure_groups` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.azure_secret_backend_role.azure_groups.new](#fn-azure_groupsnew) constructor.
@@ -258,6 +261,22 @@ Terraform resource block to set or update the namespace field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `namespace` field.
+
+
+### fn withPermanentlyDelete
+
+```ts
+withPermanentlyDelete()
+```
+
+`vault.bool.withPermanentlyDelete` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the permanently_delete field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `permanently_delete` field.
 
 
 ### fn withRole

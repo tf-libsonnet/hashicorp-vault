@@ -24,6 +24,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withSecretKey()`](#fn-withsecretkey)
 * [`fn withStsEndpoint()`](#fn-withstsendpoint)
 * [`fn withStsRegion()`](#fn-withstsregion)
+* [`fn withUseStsRegionFromClient()`](#fn-withusestsregionfromclient)
 
 ## Fields
 
@@ -63,6 +64,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `secret_key` (`string`): AWS Secret key with permissions to query AWS APIs. When `null`, the `secret_key` field will be omitted from the resulting object.
   - `sts_endpoint` (`string`): URL to override the default generated endpoint for making AWS STS API calls. When `null`, the `sts_endpoint` field will be omitted from the resulting object.
   - `sts_region` (`string`): Region to override the default region for making AWS STS API calls. When `null`, the `sts_region` field will be omitted from the resulting object.
+  - `use_sts_region_from_client` (`bool`): If set, will override sts_region and use the region from the client request&#39;s header When `null`, the `use_sts_region_from_client` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -95,6 +97,7 @@ injecting into a complete block.
   - `secret_key` (`string`): AWS Secret key with permissions to query AWS APIs. When `null`, the `secret_key` field will be omitted from the resulting object.
   - `sts_endpoint` (`string`): URL to override the default generated endpoint for making AWS STS API calls. When `null`, the `sts_endpoint` field will be omitted from the resulting object.
   - `sts_region` (`string`): Region to override the default region for making AWS STS API calls. When `null`, the `sts_region` field will be omitted from the resulting object.
+  - `use_sts_region_from_client` (`bool`): If set, will override sts_region and use the region from the client request&#39;s header When `null`, the `use_sts_region_from_client` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `aws_auth_backend_client` resource into the root Terraform configuration.
@@ -242,3 +245,19 @@ Terraform resource block to set or update the sts_region field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `sts_region` field.
+
+
+### fn withUseStsRegionFromClient
+
+```ts
+withUseStsRegionFromClient()
+```
+
+`vault.bool.withUseStsRegionFromClient` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the use_sts_region_from_client field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `use_sts_region_from_client` field.
