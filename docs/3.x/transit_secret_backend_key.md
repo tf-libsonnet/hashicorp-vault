@@ -23,6 +23,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDeletionAllowed()`](#fn-withdeletionallowed)
 * [`fn withDerived()`](#fn-withderived)
 * [`fn withExportable()`](#fn-withexportable)
+* [`fn withKeySize()`](#fn-withkeysize)
 * [`fn withMinDecryptionVersion()`](#fn-withmindecryptionversion)
 * [`fn withMinEncryptionVersion()`](#fn-withminencryptionversion)
 * [`fn withName()`](#fn-withname)
@@ -60,17 +61,18 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `allow_plaintext_backup` (`bool`): If set, enables taking backup of named key in the plaintext format. Once set, this cannot be disabled. When `null`, the `allow_plaintext_backup` field will be omitted from the resulting object.
   - `auto_rotate_interval` (`number`): Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. When `null`, the `auto_rotate_interval` field will be omitted from the resulting object.
-  - `auto_rotate_period` (`number`): Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. When `null`, the `auto_rotate_period` field will be omitted from the resulting object.
+  - `auto_rotate_period` (`number`): Amount of seconds the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. When `null`, the `auto_rotate_period` field will be omitted from the resulting object.
   - `backend` (`string`): The Transit secret backend the resource belongs to.
   - `convergent_encryption` (`bool`): Whether or not to support convergent encryption, where the same plaintext creates the same ciphertext. This requires derived to be set to true. When `null`, the `convergent_encryption` field will be omitted from the resulting object.
   - `deletion_allowed` (`bool`): Specifies if the key is allowed to be deleted. When `null`, the `deletion_allowed` field will be omitted from the resulting object.
   - `derived` (`bool`): Specifies if key derivation is to be used. If enabled, all encrypt/decrypt requests to this key must provide a context which is used for key derivation. When `null`, the `derived` field will be omitted from the resulting object.
   - `exportable` (`bool`): Enables keys to be exportable. This allows for all the valid keys in the key ring to be exported. Once set, this cannot be disabled. When `null`, the `exportable` field will be omitted from the resulting object.
+  - `key_size` (`number`): The key size in bytes for algorithms that allow variable key sizes. Currently only applicable to HMAC; this value must be between 32 and 512. When `null`, the `key_size` field will be omitted from the resulting object.
   - `min_decryption_version` (`number`): Minimum key version to use for decryption. When `null`, the `min_decryption_version` field will be omitted from the resulting object.
   - `min_encryption_version` (`number`): Minimum key version to use for encryption When `null`, the `min_encryption_version` field will be omitted from the resulting object.
   - `name` (`string`): Name of the encryption key to create.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
-  - `type` (`string`): Specifies the type of key to create. The currently-supported types are: aes128-gcm96, aes256-gcm96, chacha20-poly1305, ed25519, ecdsa-p256, ecdsa-p384, ecdsa-p521, rsa-2048, rsa-3072, rsa-4096 When `null`, the `type` field will be omitted from the resulting object.
+  - `type` (`string`): Specifies the type of key to create. The currently-supported types are: aes128-gcm96, aes256-gcm96, chacha20-poly1305, ed25519, ecdsa-p256, ecdsa-p384, ecdsa-p521, hmac, rsa-2048, rsa-3072, rsa-4096 When `null`, the `type` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -96,17 +98,18 @@ injecting into a complete block.
 **Args**:
   - `allow_plaintext_backup` (`bool`): If set, enables taking backup of named key in the plaintext format. Once set, this cannot be disabled. When `null`, the `allow_plaintext_backup` field will be omitted from the resulting object.
   - `auto_rotate_interval` (`number`): Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. When `null`, the `auto_rotate_interval` field will be omitted from the resulting object.
-  - `auto_rotate_period` (`number`): Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. When `null`, the `auto_rotate_period` field will be omitted from the resulting object.
+  - `auto_rotate_period` (`number`): Amount of seconds the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. When `null`, the `auto_rotate_period` field will be omitted from the resulting object.
   - `backend` (`string`): The Transit secret backend the resource belongs to.
   - `convergent_encryption` (`bool`): Whether or not to support convergent encryption, where the same plaintext creates the same ciphertext. This requires derived to be set to true. When `null`, the `convergent_encryption` field will be omitted from the resulting object.
   - `deletion_allowed` (`bool`): Specifies if the key is allowed to be deleted. When `null`, the `deletion_allowed` field will be omitted from the resulting object.
   - `derived` (`bool`): Specifies if key derivation is to be used. If enabled, all encrypt/decrypt requests to this key must provide a context which is used for key derivation. When `null`, the `derived` field will be omitted from the resulting object.
   - `exportable` (`bool`): Enables keys to be exportable. This allows for all the valid keys in the key ring to be exported. Once set, this cannot be disabled. When `null`, the `exportable` field will be omitted from the resulting object.
+  - `key_size` (`number`): The key size in bytes for algorithms that allow variable key sizes. Currently only applicable to HMAC; this value must be between 32 and 512. When `null`, the `key_size` field will be omitted from the resulting object.
   - `min_decryption_version` (`number`): Minimum key version to use for decryption. When `null`, the `min_decryption_version` field will be omitted from the resulting object.
   - `min_encryption_version` (`number`): Minimum key version to use for encryption When `null`, the `min_encryption_version` field will be omitted from the resulting object.
   - `name` (`string`): Name of the encryption key to create.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
-  - `type` (`string`): Specifies the type of key to create. The currently-supported types are: aes128-gcm96, aes256-gcm96, chacha20-poly1305, ed25519, ecdsa-p256, ecdsa-p384, ecdsa-p521, rsa-2048, rsa-3072, rsa-4096 When `null`, the `type` field will be omitted from the resulting object.
+  - `type` (`string`): Specifies the type of key to create. The currently-supported types are: aes128-gcm96, aes256-gcm96, chacha20-poly1305, ed25519, ecdsa-p256, ecdsa-p384, ecdsa-p521, hmac, rsa-2048, rsa-3072, rsa-4096 When `null`, the `type` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `transit_secret_backend_key` resource into the root Terraform configuration.
@@ -238,6 +241,22 @@ Terraform resource block to set or update the exportable field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `exportable` field.
+
+
+### fn withKeySize
+
+```ts
+withKeySize()
+```
+
+`vault.number.withKeySize` constructs a mixin object that can be merged into the `number`
+Terraform resource block to set or update the key_size field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`number`): The value to set for the `key_size` field.
 
 
 ### fn withMinDecryptionVersion

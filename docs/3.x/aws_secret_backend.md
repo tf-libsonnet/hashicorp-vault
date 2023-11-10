@@ -20,6 +20,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDescription()`](#fn-withdescription)
 * [`fn withDisableRemount()`](#fn-withdisableremount)
 * [`fn withIamEndpoint()`](#fn-withiamendpoint)
+* [`fn withLocal()`](#fn-withlocal)
 * [`fn withMaxLeaseTtlSeconds()`](#fn-withmaxleasettlseconds)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPath()`](#fn-withpath)
@@ -62,6 +63,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`): Human-friendly description of the mount for the backend. When `null`, the `description` field will be omitted from the resulting object.
   - `disable_remount` (`bool`): If set, opts out of mount migration on path updates. When `null`, the `disable_remount` field will be omitted from the resulting object.
   - `iam_endpoint` (`string`): Specifies a custom HTTP IAM endpoint to use. When `null`, the `iam_endpoint` field will be omitted from the resulting object.
+  - `local_` (`bool`): Specifies if the secret backend is local only When `null`, the `local_` field will be omitted from the resulting object.
   - `max_lease_ttl_seconds` (`number`): Maximum possible lease duration for secrets in seconds When `null`, the `max_lease_ttl_seconds` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Path to mount the backend at. When `null`, the `path` field will be omitted from the resulting object.
@@ -97,6 +99,7 @@ injecting into a complete block.
   - `description` (`string`): Human-friendly description of the mount for the backend. When `null`, the `description` field will be omitted from the resulting object.
   - `disable_remount` (`bool`): If set, opts out of mount migration on path updates. When `null`, the `disable_remount` field will be omitted from the resulting object.
   - `iam_endpoint` (`string`): Specifies a custom HTTP IAM endpoint to use. When `null`, the `iam_endpoint` field will be omitted from the resulting object.
+  - `local_` (`bool`): Specifies if the secret backend is local only When `null`, the `local_` field will be omitted from the resulting object.
   - `max_lease_ttl_seconds` (`number`): Maximum possible lease duration for secrets in seconds When `null`, the `max_lease_ttl_seconds` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Path to mount the backend at. When `null`, the `path` field will be omitted from the resulting object.
@@ -187,6 +190,22 @@ Terraform resource block to set or update the iam_endpoint field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `iam_endpoint` field.
+
+
+### fn withLocal
+
+```ts
+withLocal()
+```
+
+`vault.bool.withLocal` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the local field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `local` field.
 
 
 ### fn withMaxLeaseTtlSeconds

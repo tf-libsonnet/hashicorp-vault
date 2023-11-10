@@ -123,6 +123,8 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   raft_autopilot: (import 'resources/raft_autopilot.libsonnet'),
   raft_snapshot_agent_config: (import 'resources/raft_snapshot_agent_config.libsonnet'),
   rgp_policy: (import 'resources/rgp_policy.libsonnet'),
+  saml_auth_backend: (import 'resources/saml_auth_backend.libsonnet'),
+  saml_auth_backend_role: (import 'resources/saml_auth_backend_role.libsonnet'),
   ssh_secret_backend_ca: (import 'resources/ssh_secret_backend_ca.libsonnet'),
   ssh_secret_backend_role: (import 'resources/ssh_secret_backend_role.libsonnet'),
   terraform_cloud_secret_backend: (import 'resources/terraform_cloud_secret_backend.libsonnet'),

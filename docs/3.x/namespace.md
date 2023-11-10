@@ -15,6 +15,7 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withCustomMetadata()`](#fn-withcustommetadata)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPath()`](#fn-withpath)
 * [`fn withPathFq()`](#fn-withpathfq)
@@ -48,6 +49,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `custom_metadata` (`obj`): Custom metadata describing this namespace. Value type is map[string]string. When `null`, the `custom_metadata` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Namespace path.
   - `path_fq` (`string`): The fully qualified namespace path. When `null`, the `path_fq` field will be omitted from the resulting object.
@@ -74,12 +76,29 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `custom_metadata` (`obj`): Custom metadata describing this namespace. Value type is map[string]string. When `null`, the `custom_metadata` field will be omitted from the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `path` (`string`): Namespace path.
   - `path_fq` (`string`): The fully qualified namespace path. When `null`, the `path_fq` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `namespace` resource into the root Terraform configuration.
+
+
+### fn withCustomMetadata
+
+```ts
+withCustomMetadata()
+```
+
+`vault.obj.withCustomMetadata` constructs a mixin object that can be merged into the `obj`
+Terraform resource block to set or update the custom_metadata field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`obj`): The value to set for the `custom_metadata` field.
 
 
 ### fn withNamespace

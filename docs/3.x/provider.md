@@ -69,6 +69,7 @@ the `src` and/or `version` parameters are set.
   - `max_retries` (`number`): Maximum number of retries when a 5xx error code is encountered. When `null`, the `max_retries` field will be omitted from the resulting object.
   - `max_retries_ccc` (`number`): Maximum number of retries for Client Controlled Consistency related operations When `null`, the `max_retries_ccc` field will be omitted from the resulting object.
   - `namespace` (`string`): The namespace to use. Available only for Vault Enterprise. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `set_namespace_from_token` (`bool`): In the case where the Vault token is for a specific namespace and the provider namespace is not configured, use the token namespace as the root namespace for all resources. When `null`, the `set_namespace_from_token` field will be omitted from the resulting object.
   - `skip_child_token` (`bool`): Set this to true to prevent the creation of ephemeral child token used by this provider. When `null`, the `skip_child_token` field will be omitted from the resulting object.
   - `skip_get_vault_version` (`bool`): Skip the dynamic fetching of the Vault server version. When `null`, the `skip_get_vault_version` field will be omitted from the resulting object.
   - `skip_tls_verify` (`bool`): Set this to true only if the target Vault server is an insecure development instance. When `null`, the `skip_tls_verify` field will be omitted from the resulting object.
@@ -129,6 +130,7 @@ injecting into a complete block.
   - `max_retries` (`number`): Maximum number of retries when a 5xx error code is encountered. When `null`, the `max_retries` field will be omitted from the resulting object.
   - `max_retries_ccc` (`number`): Maximum number of retries for Client Controlled Consistency related operations When `null`, the `max_retries_ccc` field will be omitted from the resulting object.
   - `namespace` (`string`): The namespace to use. Available only for Vault Enterprise. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `set_namespace_from_token` (`bool`): In the case where the Vault token is for a specific namespace and the provider namespace is not configured, use the token namespace as the root namespace for all resources. When `null`, the `set_namespace_from_token` field will be omitted from the resulting object.
   - `skip_child_token` (`bool`): Set this to true to prevent the creation of ephemeral child token used by this provider. When `null`, the `skip_child_token` field will be omitted from the resulting object.
   - `skip_get_vault_version` (`bool`): Skip the dynamic fetching of the Vault server version. When `null`, the `skip_get_vault_version` field will be omitted from the resulting object.
   - `skip_tls_verify` (`bool`): Set this to true only if the target Vault server is an insecure development instance. When `null`, the `skip_tls_verify` field will be omitted from the resulting object.
@@ -174,9 +176,10 @@ Terraform sub block.
 
 **Args**:
   - `method` (`string`): Set the `method` field on the resulting object. When `null`, the `method` field will be omitted from the resulting object.
-  - `namespace` (`string`): Set the `namespace` field on the resulting object. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `parameters` (`obj`): Set the `parameters` field on the resulting object. When `null`, the `parameters` field will be omitted from the resulting object.
   - `path` (`string`): Set the `path` field on the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login` sub block.
@@ -212,8 +215,9 @@ Terraform sub block.
   - `aws_web_identity_token_file` (`string`): Path to the file containing an OAuth 2.0 access token or OpenID Connect ID token. When `null`, the `aws_web_identity_token_file` field will be omitted from the resulting object.
   - `header_value` (`string`): The Vault header value to include in the STS signing request. When `null`, the `header_value` field will be omitted from the resulting object.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `role` (`string`): The Vault role to use when logging into Vault.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_aws` sub block.
@@ -239,12 +243,13 @@ Terraform sub block.
   - `client_id` (`string`): The identity&#39;s client ID. When `null`, the `client_id` field will be omitted from the resulting object.
   - `jwt` (`string`): A signed JSON Web Token. If not specified on will be created automatically When `null`, the `jwt` field will be omitted from the resulting object.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `resource_group_name` (`string`): The resource group for the machine that generated the MSI token. This information can be obtained through instance metadata.
   - `role` (`string`): Name of the login role.
   - `scope` (`string`): The scopes to include in the token request. When `null`, the `scope` field will be omitted from the resulting object.
   - `subscription_id` (`string`): The subscription ID for the machine that generated the MSI token. This information can be obtained through instance metadata.
   - `tenant_id` (`string`): Provides the tenant ID to use in a multi-tenant authentication scenario. When `null`, the `tenant_id` field will be omitted from the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
   - `vm_name` (`string`): The virtual machine name for the machine that generated the MSI token. This information can be obtained through instance metadata. When `null`, the `vm_name` field will be omitted from the resulting object.
   - `vmss_name` (`string`): The virtual machine scale set name for the machine that generated the MSI token. This information can be obtained through instance metadata. When `null`, the `vmss_name` field will be omitted from the resulting object.
 
@@ -273,7 +278,8 @@ Terraform sub block.
   - `key_file` (`string`): Path to a file containing the private key that the certificate was issued for.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
   - `name` (`string`): Name of the certificate&#39;s role When `null`, the `name` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_cert` sub block.
@@ -299,9 +305,10 @@ Terraform sub block.
   - `credentials` (`string`): Path to the Google Cloud credentials file. When `null`, the `credentials` field will be omitted from the resulting object.
   - `jwt` (`string`): A signed JSON Web Token. When `null`, the `jwt` field will be omitted from the resulting object.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `role` (`string`): Name of the login role.
   - `service_account` (`string`): IAM service account. When `null`, the `service_account` field will be omitted from the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_gcp` sub block.
@@ -326,8 +333,9 @@ Terraform sub block.
 **Args**:
   - `jwt` (`string`): A signed JSON Web Token.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `role` (`string`): Name of the login role.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_jwt` sub block.
@@ -354,11 +362,12 @@ Terraform sub block.
   - `keytab_path` (`string`): The Kerberos keytab file containing the entry of the login entity. When `null`, the `keytab_path` field will be omitted from the resulting object.
   - `krb5conf_path` (`string`): A valid Kerberos configuration file e.g. /etc/krb5.conf. When `null`, the `krb5conf_path` field will be omitted from the resulting object.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `realm` (`string`): The Kerberos server&#39;s authoritative authentication domain When `null`, the `realm` field will be omitted from the resulting object.
   - `remove_instance_name` (`bool`): Strip the host from the username found in the keytab. When `null`, the `remove_instance_name` field will be omitted from the resulting object.
   - `service` (`string`): The service principle name. When `null`, the `service` field will be omitted from the resulting object.
   - `token` (`string`): Simple and Protected GSSAPI Negotiation Mechanism (SPNEGO) token When `null`, the `token` field will be omitted from the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
   - `username` (`string`): The username to login into Kerberos with. When `null`, the `username` field will be omitted from the resulting object.
 
 **Returns**:
@@ -384,8 +393,9 @@ Terraform sub block.
 **Args**:
   - `auth_type` (`string`): Authentication type to use when getting OCI credentials.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `role` (`string`): Name of the login role.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_oci` sub block.
@@ -411,8 +421,9 @@ Terraform sub block.
   - `callback_address` (`string`): The callback address. Must be a valid URI without the path. When `null`, the `callback_address` field will be omitted from the resulting object.
   - `callback_listener_address` (`string`): The callback listener&#39;s address. Must be a valid URI without the path. When `null`, the `callback_listener_address` field will be omitted from the resulting object.
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `role` (`string`): Name of the login role.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_oidc` sub block.
@@ -436,8 +447,9 @@ Terraform sub block.
 
 **Args**:
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `password` (`string`): The Radius password for username.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
   - `username` (`string`): The Radius username.
 
 **Returns**:
@@ -462,7 +474,8 @@ Terraform sub block.
 
 **Args**:
   - `filename` (`string`): The name of a file containing a single line that is a valid Vault token
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `auth_login_token_file` sub block.
@@ -486,9 +499,10 @@ Terraform sub block.
 
 **Args**:
   - `mount` (`string`): The path where the authentication engine is mounted. When `null`, the `mount` field will be omitted from the resulting object.
-  - `namespace` (`string`): The authentication engine&#39;s namespace. When `null`, the `namespace` field will be omitted from the resulting object.
+  - `namespace` (`string`): The authentication engine&#39;s namespace. Conflicts with use_root_namespace When `null`, the `namespace` field will be omitted from the resulting object.
   - `password` (`string`): Login with password When `null`, the `password` field will be omitted from the resulting object.
   - `password_file` (`string`): Login with password from a file When `null`, the `password_file` field will be omitted from the resulting object.
+  - `use_root_namespace` (`bool`): Authenticate to the root Vault namespace. Conflicts with namespace When `null`, the `use_root_namespace` field will be omitted from the resulting object.
   - `username` (`string`): Login with username
 
 **Returns**:

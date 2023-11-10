@@ -20,7 +20,9 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withName()`](#fn-withname)
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withRotationPeriod()`](#fn-withrotationperiod)
+* [`fn withRotationSchedule()`](#fn-withrotationschedule)
 * [`fn withRotationStatements()`](#fn-withrotationstatements)
+* [`fn withRotationWindow()`](#fn-withrotationwindow)
 * [`fn withUsername()`](#fn-withusername)
 
 ## Fields
@@ -56,8 +58,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `db_name` (`string`): Database connection to use for this role.
   - `name` (`string`): Unique name for the static role.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
-  - `rotation_period` (`number`): The amount of time Vault should wait before rotating the password, in seconds.
+  - `rotation_period` (`number`): The amount of time Vault should wait before rotating the password, in seconds. When `null`, the `rotation_period` field will be omitted from the resulting object.
+  - `rotation_schedule` (`string`): A cron-style string that will define the schedule on which rotations should occur. When `null`, the `rotation_schedule` field will be omitted from the resulting object.
   - `rotation_statements` (`list`): Database statements to execute to rotate the password for the configured database user. When `null`, the `rotation_statements` field will be omitted from the resulting object.
+  - `rotation_window` (`number`): The amount of time in seconds in which the rotations are allowed to occur starting from a given rotation_schedule. When `null`, the `rotation_window` field will be omitted from the resulting object.
   - `username` (`string`): The database username that this role corresponds to.
 
 **Returns**:
@@ -86,8 +90,10 @@ injecting into a complete block.
   - `db_name` (`string`): Database connection to use for this role.
   - `name` (`string`): Unique name for the static role.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
-  - `rotation_period` (`number`): The amount of time Vault should wait before rotating the password, in seconds.
+  - `rotation_period` (`number`): The amount of time Vault should wait before rotating the password, in seconds. When `null`, the `rotation_period` field will be omitted from the resulting object.
+  - `rotation_schedule` (`string`): A cron-style string that will define the schedule on which rotations should occur. When `null`, the `rotation_schedule` field will be omitted from the resulting object.
   - `rotation_statements` (`list`): Database statements to execute to rotate the password for the configured database user. When `null`, the `rotation_statements` field will be omitted from the resulting object.
+  - `rotation_window` (`number`): The amount of time in seconds in which the rotations are allowed to occur starting from a given rotation_schedule. When `null`, the `rotation_window` field will be omitted from the resulting object.
   - `username` (`string`): The database username that this role corresponds to.
 
 **Returns**:
@@ -174,6 +180,22 @@ Terraform resource block to set or update the rotation_period field.
   - `value` (`number`): The value to set for the `rotation_period` field.
 
 
+### fn withRotationSchedule
+
+```ts
+withRotationSchedule()
+```
+
+`vault.string.withRotationSchedule` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the rotation_schedule field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `rotation_schedule` field.
+
+
 ### fn withRotationStatements
 
 ```ts
@@ -188,6 +210,22 @@ Terraform resource block to set or update the rotation_statements field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `rotation_statements` field.
+
+
+### fn withRotationWindow
+
+```ts
+withRotationWindow()
+```
+
+`vault.number.withRotationWindow` constructs a mixin object that can be merged into the `number`
+Terraform resource block to set or update the rotation_window field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`number`): The value to set for the `rotation_window` field.
 
 
 ### fn withUsername
