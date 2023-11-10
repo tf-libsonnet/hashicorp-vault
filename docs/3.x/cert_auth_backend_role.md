@@ -27,6 +27,11 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDisplayName()`](#fn-withdisplayname)
 * [`fn withName()`](#fn-withname)
 * [`fn withNamespace()`](#fn-withnamespace)
+* [`fn withOcspCaCertificates()`](#fn-withocspcacertificates)
+* [`fn withOcspEnabled()`](#fn-withocspenabled)
+* [`fn withOcspFailOpen()`](#fn-withocspfailopen)
+* [`fn withOcspQueryAllServers()`](#fn-withocspqueryallservers)
+* [`fn withOcspServersOverride()`](#fn-withocspserversoverride)
 * [`fn withRequiredExtensions()`](#fn-withrequiredextensions)
 * [`fn withTokenBoundCidrs()`](#fn-withtokenboundcidrs)
 * [`fn withTokenExplicitMaxTtl()`](#fn-withtokenexplicitmaxttl)
@@ -79,6 +84,11 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `display_name` (`string`): Set the `display_name` field on the resulting resource block. When `null`, the `display_name` field will be omitted from the resulting object.
   - `name` (`string`): Set the `name` field on the resulting resource block.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `ocsp_ca_certificates` (`string`): Any additional CA certificates needed to verify OCSP responses. Provided as base64 encoded PEM data. When `null`, the `ocsp_ca_certificates` field will be omitted from the resulting object.
+  - `ocsp_enabled` (`bool`): If enabled, validate certificates&#39; revocation status using OCSP. When `null`, the `ocsp_enabled` field will be omitted from the resulting object.
+  - `ocsp_fail_open` (`bool`): If true and an OCSP response cannot be fetched or is of an unknown status, the login will proceed as if the certificate has not been revoked. When `null`, the `ocsp_fail_open` field will be omitted from the resulting object.
+  - `ocsp_query_all_servers` (`bool`): If set to true, rather than accepting the first successful OCSP response, query all servers and consider the certificate valid only if all servers agree. When `null`, the `ocsp_query_all_servers` field will be omitted from the resulting object.
+  - `ocsp_servers_override` (`list`): A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected. When `null`, the `ocsp_servers_override` field will be omitted from the resulting object.
   - `required_extensions` (`list`): Set the `required_extensions` field on the resulting resource block. When `null`, the `required_extensions` field will be omitted from the resulting object.
   - `token_bound_cidrs` (`list`): Specifies the blocks of IP addresses which are allowed to use the generated token When `null`, the `token_bound_cidrs` field will be omitted from the resulting object.
   - `token_explicit_max_ttl` (`number`): Generated Token&#39;s Explicit Maximum TTL in seconds When `null`, the `token_explicit_max_ttl` field will be omitted from the resulting object.
@@ -124,6 +134,11 @@ injecting into a complete block.
   - `display_name` (`string`): Set the `display_name` field on the resulting object. When `null`, the `display_name` field will be omitted from the resulting object.
   - `name` (`string`): Set the `name` field on the resulting object.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `ocsp_ca_certificates` (`string`): Any additional CA certificates needed to verify OCSP responses. Provided as base64 encoded PEM data. When `null`, the `ocsp_ca_certificates` field will be omitted from the resulting object.
+  - `ocsp_enabled` (`bool`): If enabled, validate certificates&#39; revocation status using OCSP. When `null`, the `ocsp_enabled` field will be omitted from the resulting object.
+  - `ocsp_fail_open` (`bool`): If true and an OCSP response cannot be fetched or is of an unknown status, the login will proceed as if the certificate has not been revoked. When `null`, the `ocsp_fail_open` field will be omitted from the resulting object.
+  - `ocsp_query_all_servers` (`bool`): If set to true, rather than accepting the first successful OCSP response, query all servers and consider the certificate valid only if all servers agree. When `null`, the `ocsp_query_all_servers` field will be omitted from the resulting object.
+  - `ocsp_servers_override` (`list`): A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected. When `null`, the `ocsp_servers_override` field will be omitted from the resulting object.
   - `required_extensions` (`list`): Set the `required_extensions` field on the resulting object. When `null`, the `required_extensions` field will be omitted from the resulting object.
   - `token_bound_cidrs` (`list`): Specifies the blocks of IP addresses which are allowed to use the generated token When `null`, the `token_bound_cidrs` field will be omitted from the resulting object.
   - `token_explicit_max_ttl` (`number`): Generated Token&#39;s Explicit Maximum TTL in seconds When `null`, the `token_explicit_max_ttl` field will be omitted from the resulting object.
@@ -329,6 +344,86 @@ Terraform resource block to set or update the namespace field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `namespace` field.
+
+
+### fn withOcspCaCertificates
+
+```ts
+withOcspCaCertificates()
+```
+
+`vault.string.withOcspCaCertificates` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the ocsp_ca_certificates field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `ocsp_ca_certificates` field.
+
+
+### fn withOcspEnabled
+
+```ts
+withOcspEnabled()
+```
+
+`vault.bool.withOcspEnabled` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the ocsp_enabled field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `ocsp_enabled` field.
+
+
+### fn withOcspFailOpen
+
+```ts
+withOcspFailOpen()
+```
+
+`vault.bool.withOcspFailOpen` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the ocsp_fail_open field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `ocsp_fail_open` field.
+
+
+### fn withOcspQueryAllServers
+
+```ts
+withOcspQueryAllServers()
+```
+
+`vault.bool.withOcspQueryAllServers` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the ocsp_query_all_servers field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `ocsp_query_all_servers` field.
+
+
+### fn withOcspServersOverride
+
+```ts
+withOcspServersOverride()
+```
+
+`vault.list.withOcspServersOverride` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the ocsp_servers_override field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `ocsp_servers_override` field.
 
 
 ### fn withRequiredExtensions

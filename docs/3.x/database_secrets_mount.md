@@ -1381,6 +1381,7 @@ Terraform sub block.
 
 **Args**:
   - `allowed_roles` (`list`): A list of roles that are allowed to use this connection. When `null`, the `allowed_roles` field will be omitted from the resulting object.
+  - `auth_type` (`string`): Specify alternative authorization type. (Only &#39;gcp_iam&#39; is valid currently) When `null`, the `auth_type` field will be omitted from the resulting object.
   - `connection_url` (`string`): Connection string to use to connect to the database. When `null`, the `connection_url` field will be omitted from the resulting object.
   - `data` (`obj`): A map of sensitive data to pass to the endpoint. Useful for templated connection strings. When `null`, the `data` field will be omitted from the resulting object.
   - `max_connection_lifetime` (`number`): Maximum number of seconds a connection may be reused. When `null`, the `max_connection_lifetime` field will be omitted from the resulting object.
@@ -1390,6 +1391,7 @@ Terraform sub block.
   - `password` (`string`): The root credential password used in the connection URL When `null`, the `password` field will be omitted from the resulting object.
   - `plugin_name` (`string`): Specifies the name of the plugin to use for this connection. Must be prefixed with the name of one of the supported database engine types. When `null`, the `plugin_name` field will be omitted from the resulting object.
   - `root_rotation_statements` (`list`): A list of database statements to be executed to rotate the root user&#39;s credentials. When `null`, the `root_rotation_statements` field will be omitted from the resulting object.
+  - `service_account_json` (`string`): A JSON encoded credential for use with IAM authorization When `null`, the `service_account_json` field will be omitted from the resulting object.
   - `tls_ca` (`string`): x509 CA file for validating the certificate presented by the MySQL server. Must be PEM encoded. When `null`, the `tls_ca` field will be omitted from the resulting object.
   - `tls_certificate_key` (`string`): x509 certificate for connecting to the database. This must be a PEM encoded version of the private key and the certificate combined. When `null`, the `tls_certificate_key` field will be omitted from the resulting object.
   - `username` (`string`): The root credential username used in the connection URL When `null`, the `username` field will be omitted from the resulting object.
@@ -1558,6 +1560,7 @@ Terraform sub block.
 
 **Args**:
   - `allowed_roles` (`list`): A list of roles that are allowed to use this connection. When `null`, the `allowed_roles` field will be omitted from the resulting object.
+  - `auth_type` (`string`): Specify alternative authorization type. (Only &#39;gcp_iam&#39; is valid currently) When `null`, the `auth_type` field will be omitted from the resulting object.
   - `connection_url` (`string`): Connection string to use to connect to the database. When `null`, the `connection_url` field will be omitted from the resulting object.
   - `data` (`obj`): A map of sensitive data to pass to the endpoint. Useful for templated connection strings. When `null`, the `data` field will be omitted from the resulting object.
   - `disable_escaping` (`bool`): Disable special character escaping in username and password When `null`, the `disable_escaping` field will be omitted from the resulting object.
@@ -1568,6 +1571,7 @@ Terraform sub block.
   - `password` (`string`): The root credential password used in the connection URL When `null`, the `password` field will be omitted from the resulting object.
   - `plugin_name` (`string`): Specifies the name of the plugin to use for this connection. Must be prefixed with the name of one of the supported database engine types. When `null`, the `plugin_name` field will be omitted from the resulting object.
   - `root_rotation_statements` (`list`): A list of database statements to be executed to rotate the root user&#39;s credentials. When `null`, the `root_rotation_statements` field will be omitted from the resulting object.
+  - `service_account_json` (`string`): A JSON encoded credential for use with IAM authorization When `null`, the `service_account_json` field will be omitted from the resulting object.
   - `username` (`string`): The root credential username used in the connection URL When `null`, the `username` field will be omitted from the resulting object.
   - `username_template` (`string`): Username generation template. When `null`, the `username_template` field will be omitted from the resulting object.
   - `verify_connection` (`bool`): Specifies if the connection is verified during initial configuration. When `null`, the `verify_connection` field will be omitted from the resulting object.

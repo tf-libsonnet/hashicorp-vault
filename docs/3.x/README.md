@@ -134,6 +134,8 @@ project.
 * [raft_autopilot](raft_autopilot.md)
 * [raft_snapshot_agent_config](raft_snapshot_agent_config.md)
 * [rgp_policy](rgp_policy.md)
+* [saml_auth_backend](saml_auth_backend.md)
+* [saml_auth_backend_role](saml_auth_backend_role.md)
 * [ssh_secret_backend_ca](ssh_secret_backend_ca.md)
 * [ssh_secret_backend_role](ssh_secret_backend_role.md)
 * [terraform_cloud_secret_backend](terraform_cloud_secret_backend.md)

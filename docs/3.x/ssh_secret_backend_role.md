@@ -41,6 +41,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withMaxTtl()`](#fn-withmaxttl)
 * [`fn withName()`](#fn-withname)
 * [`fn withNamespace()`](#fn-withnamespace)
+* [`fn withNotBeforeDuration()`](#fn-withnotbeforeduration)
 * [`fn withTtl()`](#fn-withttl)
 * [`obj allowed_user_key_config`](#obj-allowed_user_key_config)
   * [`fn new()`](#fn-allowed_user_key_confignew)
@@ -98,6 +99,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `max_ttl` (`string`): Set the `max_ttl` field on the resulting resource block. When `null`, the `max_ttl` field will be omitted from the resulting object.
   - `name` (`string`): Unique name for the role.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `not_before_duration` (`string`): Specifies the duration by which to backdate the ValidAfter property. Uses duration format strings. When `null`, the `not_before_duration` field will be omitted from the resulting object.
   - `ttl` (`string`): Set the `ttl` field on the resulting resource block. When `null`, the `ttl` field will be omitted from the resulting object.
   - `allowed_user_key_config` (`list[obj]`): Set of allowed public key types and their relevant configuration When `null`, the `allowed_user_key_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.ssh_secret_backend_role.allowed_user_key_config.new](#fn-allowed_user_key_confignew) constructor.
 
@@ -147,6 +149,7 @@ injecting into a complete block.
   - `max_ttl` (`string`): Set the `max_ttl` field on the resulting object. When `null`, the `max_ttl` field will be omitted from the resulting object.
   - `name` (`string`): Unique name for the role.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
+  - `not_before_duration` (`string`): Specifies the duration by which to backdate the ValidAfter property. Uses duration format strings. When `null`, the `not_before_duration` field will be omitted from the resulting object.
   - `ttl` (`string`): Set the `ttl` field on the resulting object. When `null`, the `ttl` field will be omitted from the resulting object.
   - `allowed_user_key_config` (`list[obj]`): Set of allowed public key types and their relevant configuration When `null`, the `allowed_user_key_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.ssh_secret_backend_role.allowed_user_key_config.new](#fn-allowed_user_key_confignew) constructor.
 
@@ -573,6 +576,22 @@ Terraform resource block to set or update the namespace field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `namespace` field.
+
+
+### fn withNotBeforeDuration
+
+```ts
+withNotBeforeDuration()
+```
+
+`vault.string.withNotBeforeDuration` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the not_before_duration field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `not_before_duration` field.
 
 
 ### fn withTtl
