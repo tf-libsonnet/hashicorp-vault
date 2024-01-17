@@ -37,6 +37,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEmailProtectionFlag()`](#fn-withemailprotectionflag)
 * [`fn withEnforceHostnames()`](#fn-withenforcehostnames)
 * [`fn withExtKeyUsage()`](#fn-withextkeyusage)
+* [`fn withExtKeyUsageOids()`](#fn-withextkeyusageoids)
 * [`fn withGenerateLease()`](#fn-withgeneratelease)
 * [`fn withIssuerRef()`](#fn-withissuerref)
 * [`fn withKeyBits()`](#fn-withkeybits)
@@ -115,6 +116,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `email_protection_flag` (`bool`): Flag to specify certificates for email protection use. When `null`, the `email_protection_flag` field will be omitted from the resulting object.
   - `enforce_hostnames` (`bool`): Flag to allow only valid host names When `null`, the `enforce_hostnames` field will be omitted from the resulting object.
   - `ext_key_usage` (`list`): Specify the allowed extended key usage constraint on issued certificates. When `null`, the `ext_key_usage` field will be omitted from the resulting object.
+  - `ext_key_usage_oids` (`list`): A list of extended key usage OIDs. When `null`, the `ext_key_usage_oids` field will be omitted from the resulting object.
   - `generate_lease` (`bool`): Flag to generate leases with certificates. When `null`, the `generate_lease` field will be omitted from the resulting object.
   - `issuer_ref` (`string`): Specifies the default issuer of this request. When `null`, the `issuer_ref` field will be omitted from the resulting object.
   - `key_bits` (`number`): The number of bits of generated keys. When `null`, the `key_bits` field will be omitted from the resulting object.
@@ -183,6 +185,7 @@ injecting into a complete block.
   - `email_protection_flag` (`bool`): Flag to specify certificates for email protection use. When `null`, the `email_protection_flag` field will be omitted from the resulting object.
   - `enforce_hostnames` (`bool`): Flag to allow only valid host names When `null`, the `enforce_hostnames` field will be omitted from the resulting object.
   - `ext_key_usage` (`list`): Specify the allowed extended key usage constraint on issued certificates. When `null`, the `ext_key_usage` field will be omitted from the resulting object.
+  - `ext_key_usage_oids` (`list`): A list of extended key usage OIDs. When `null`, the `ext_key_usage_oids` field will be omitted from the resulting object.
   - `generate_lease` (`bool`): Flag to generate leases with certificates. When `null`, the `generate_lease` field will be omitted from the resulting object.
   - `issuer_ref` (`string`): Specifies the default issuer of this request. When `null`, the `issuer_ref` field will be omitted from the resulting object.
   - `key_bits` (`number`): The number of bits of generated keys. When `null`, the `key_bits` field will be omitted from the resulting object.
@@ -561,6 +564,22 @@ Terraform resource block to set or update the ext_key_usage field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list`): The value to set for the `ext_key_usage` field.
+
+
+### fn withExtKeyUsageOids
+
+```ts
+withExtKeyUsageOids()
+```
+
+`vault.list.withExtKeyUsageOids` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the ext_key_usage_oids field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `ext_key_usage_oids` field.
 
 
 ### fn withGenerateLease

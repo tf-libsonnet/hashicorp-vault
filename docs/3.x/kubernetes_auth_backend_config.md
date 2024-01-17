@@ -62,7 +62,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `kubernetes_host` (`string`): Host must be a host string, a host:port pair, or a URL to the base of the Kubernetes API server.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `pem_keys` (`list`): Optional list of PEM-formatted public keys or certificates used to verify the signatures of Kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys. When `null`, the `pem_keys` field will be omitted from the resulting object.
-  - `token_reviewer_jwt` (`string`): A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API. When `null`, the `token_reviewer_jwt` field will be omitted from the resulting object.
+  - `token_reviewer_jwt` (`string`): A service account JWT (or other token) used as a bearer token to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API. When `null`, the `token_reviewer_jwt` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -94,7 +94,7 @@ injecting into a complete block.
   - `kubernetes_host` (`string`): Host must be a host string, a host:port pair, or a URL to the base of the Kubernetes API server.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `pem_keys` (`list`): Optional list of PEM-formatted public keys or certificates used to verify the signatures of Kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys. When `null`, the `pem_keys` field will be omitted from the resulting object.
-  - `token_reviewer_jwt` (`string`): A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API. When `null`, the `token_reviewer_jwt` field will be omitted from the resulting object.
+  - `token_reviewer_jwt` (`string`): A service account JWT (or other token) used as a bearer token to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API. When `null`, the `token_reviewer_jwt` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `kubernetes_auth_backend_config` resource into the root Terraform configuration.

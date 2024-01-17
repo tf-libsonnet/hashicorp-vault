@@ -26,6 +26,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withNamespace()`](#fn-withnamespace)
 * [`fn withPermanentlyDelete()`](#fn-withpermanentlydelete)
 * [`fn withRole()`](#fn-withrole)
+* [`fn withSignInAudience()`](#fn-withsigninaudience)
+* [`fn withTags()`](#fn-withtags)
 * [`fn withTtl()`](#fn-withttl)
 * [`obj azure_groups`](#obj-azure_groups)
   * [`fn new()`](#fn-azure_groupsnew)
@@ -68,6 +70,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `permanently_delete` (`bool`): Indicates whether the applications and service principals created by Vault will be permanently deleted when the corresponding leases expire. When `null`, the `permanently_delete` field will be omitted from the resulting object.
   - `role` (`string`): Name of the role to create
+  - `sign_in_audience` (`string`): Specifies the security principal types that are allowed to sign in to the application. Valid values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount When `null`, the `sign_in_audience` field will be omitted from the resulting object.
+  - `tags` (`list`): Comma-separated strings of Azure tags to attach to an application. When `null`, the `tags` field will be omitted from the resulting object.
   - `ttl` (`string`): Human-friendly description of the mount for the backend. When `null`, the `ttl` field will be omitted from the resulting object.
   - `azure_groups` (`list[obj]`): Set the `azure_groups` field on the resulting resource block. When `null`, the `azure_groups` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.azure_secret_backend_role.azure_groups.new](#fn-azure_groupsnew) constructor.
   - `azure_roles` (`list[obj]`): Set the `azure_roles` field on the resulting resource block. When `null`, the `azure_roles` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.azure_secret_backend_role.azure_roles.new](#fn-azure_rolesnew) constructor.
@@ -101,6 +105,8 @@ injecting into a complete block.
   - `namespace` (`string`): Target namespace. (requires Enterprise) When `null`, the `namespace` field will be omitted from the resulting object.
   - `permanently_delete` (`bool`): Indicates whether the applications and service principals created by Vault will be permanently deleted when the corresponding leases expire. When `null`, the `permanently_delete` field will be omitted from the resulting object.
   - `role` (`string`): Name of the role to create
+  - `sign_in_audience` (`string`): Specifies the security principal types that are allowed to sign in to the application. Valid values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount When `null`, the `sign_in_audience` field will be omitted from the resulting object.
+  - `tags` (`list`): Comma-separated strings of Azure tags to attach to an application. When `null`, the `tags` field will be omitted from the resulting object.
   - `ttl` (`string`): Human-friendly description of the mount for the backend. When `null`, the `ttl` field will be omitted from the resulting object.
   - `azure_groups` (`list[obj]`): Set the `azure_groups` field on the resulting object. When `null`, the `azure_groups` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.azure_secret_backend_role.azure_groups.new](#fn-azure_groupsnew) constructor.
   - `azure_roles` (`list[obj]`): Set the `azure_roles` field on the resulting object. When `null`, the `azure_roles` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.azure_secret_backend_role.azure_roles.new](#fn-azure_rolesnew) constructor.
@@ -293,6 +299,38 @@ Terraform resource block to set or update the role field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `role` field.
+
+
+### fn withSignInAudience
+
+```ts
+withSignInAudience()
+```
+
+`vault.string.withSignInAudience` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the sign_in_audience field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `sign_in_audience` field.
+
+
+### fn withTags
+
+```ts
+withTags()
+```
+
+`vault.list.withTags` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the tags field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `tags` field.
 
 
 ### fn withTtl
