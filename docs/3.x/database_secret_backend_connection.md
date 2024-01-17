@@ -1289,11 +1289,15 @@ Terraform sub block.
 
 
 **Args**:
+  - `auth_type` (`string`): Specify alternative authorization type. (Only &#39;gcp_iam&#39; is valid currently) When `null`, the `auth_type` field will be omitted from the resulting object.
   - `connection_url` (`string`): Connection string to use to connect to the database. When `null`, the `connection_url` field will be omitted from the resulting object.
   - `max_connection_lifetime` (`number`): Maximum number of seconds a connection may be reused. When `null`, the `max_connection_lifetime` field will be omitted from the resulting object.
   - `max_idle_connections` (`number`): Maximum number of idle connections to the database. When `null`, the `max_idle_connections` field will be omitted from the resulting object.
   - `max_open_connections` (`number`): Maximum number of open connections to the database. When `null`, the `max_open_connections` field will be omitted from the resulting object.
   - `password` (`string`): The root credential password used in the connection URL When `null`, the `password` field will be omitted from the resulting object.
+  - `service_account_json` (`string`): A JSON encoded credential for use with IAM authorization When `null`, the `service_account_json` field will be omitted from the resulting object.
+  - `tls_ca` (`string`): x509 CA file for validating the certificate presented by the MySQL server. Must be PEM encoded. When `null`, the `tls_ca` field will be omitted from the resulting object.
+  - `tls_certificate_key` (`string`): x509 certificate for connecting to the database. This must be a PEM encoded version of the private key and the certificate combined. When `null`, the `tls_certificate_key` field will be omitted from the resulting object.
   - `username` (`string`): The root credential username used in the connection URL When `null`, the `username` field will be omitted from the resulting object.
   - `username_template` (`string`): Username generation template. When `null`, the `username_template` field will be omitted from the resulting object.
 
@@ -1318,11 +1322,15 @@ Terraform sub block.
 
 
 **Args**:
+  - `auth_type` (`string`): Specify alternative authorization type. (Only &#39;gcp_iam&#39; is valid currently) When `null`, the `auth_type` field will be omitted from the resulting object.
   - `connection_url` (`string`): Connection string to use to connect to the database. When `null`, the `connection_url` field will be omitted from the resulting object.
   - `max_connection_lifetime` (`number`): Maximum number of seconds a connection may be reused. When `null`, the `max_connection_lifetime` field will be omitted from the resulting object.
   - `max_idle_connections` (`number`): Maximum number of idle connections to the database. When `null`, the `max_idle_connections` field will be omitted from the resulting object.
   - `max_open_connections` (`number`): Maximum number of open connections to the database. When `null`, the `max_open_connections` field will be omitted from the resulting object.
   - `password` (`string`): The root credential password used in the connection URL When `null`, the `password` field will be omitted from the resulting object.
+  - `service_account_json` (`string`): A JSON encoded credential for use with IAM authorization When `null`, the `service_account_json` field will be omitted from the resulting object.
+  - `tls_ca` (`string`): x509 CA file for validating the certificate presented by the MySQL server. Must be PEM encoded. When `null`, the `tls_ca` field will be omitted from the resulting object.
+  - `tls_certificate_key` (`string`): x509 certificate for connecting to the database. This must be a PEM encoded version of the private key and the certificate combined. When `null`, the `tls_certificate_key` field will be omitted from the resulting object.
   - `username` (`string`): The root credential username used in the connection URL When `null`, the `username` field will be omitted from the resulting object.
   - `username_template` (`string`): Username generation template. When `null`, the `username_template` field will be omitted from the resulting object.
 
@@ -1347,11 +1355,15 @@ Terraform sub block.
 
 
 **Args**:
+  - `auth_type` (`string`): Specify alternative authorization type. (Only &#39;gcp_iam&#39; is valid currently) When `null`, the `auth_type` field will be omitted from the resulting object.
   - `connection_url` (`string`): Connection string to use to connect to the database. When `null`, the `connection_url` field will be omitted from the resulting object.
   - `max_connection_lifetime` (`number`): Maximum number of seconds a connection may be reused. When `null`, the `max_connection_lifetime` field will be omitted from the resulting object.
   - `max_idle_connections` (`number`): Maximum number of idle connections to the database. When `null`, the `max_idle_connections` field will be omitted from the resulting object.
   - `max_open_connections` (`number`): Maximum number of open connections to the database. When `null`, the `max_open_connections` field will be omitted from the resulting object.
   - `password` (`string`): The root credential password used in the connection URL When `null`, the `password` field will be omitted from the resulting object.
+  - `service_account_json` (`string`): A JSON encoded credential for use with IAM authorization When `null`, the `service_account_json` field will be omitted from the resulting object.
+  - `tls_ca` (`string`): x509 CA file for validating the certificate presented by the MySQL server. Must be PEM encoded. When `null`, the `tls_ca` field will be omitted from the resulting object.
+  - `tls_certificate_key` (`string`): x509 certificate for connecting to the database. This must be a PEM encoded version of the private key and the certificate combined. When `null`, the `tls_certificate_key` field will be omitted from the resulting object.
   - `username` (`string`): The root credential username used in the connection URL When `null`, the `username` field will be omitted from the resulting object.
   - `username_template` (`string`): Username generation template. When `null`, the `username_template` field will be omitted from the resulting object.
 

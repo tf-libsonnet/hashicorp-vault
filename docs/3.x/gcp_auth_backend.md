@@ -27,6 +27,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPath()`](#fn-withpath)
 * [`fn withPrivateKeyId()`](#fn-withprivatekeyid)
 * [`fn withProjectId()`](#fn-withprojectid)
+* [`fn withTune()`](#fn-withtune)
 * [`obj custom_endpoint`](#obj-custom_endpoint)
   * [`fn new()`](#fn-custom_endpointnew)
 
@@ -69,6 +70,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `path` (`string`): Set the `path` field on the resulting resource block. When `null`, the `path` field will be omitted from the resulting object.
   - `private_key_id` (`string`): Set the `private_key_id` field on the resulting resource block. When `null`, the `private_key_id` field will be omitted from the resulting object.
   - `project_id` (`string`): Set the `project_id` field on the resulting resource block. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `tune` (`list`): Set the `tune` field on the resulting resource block. When `null`, the `tune` field will be omitted from the resulting object.
   - `custom_endpoint` (`list[obj]`): Specifies overrides to service endpoints used when making API requests to GCP. When `null`, the `custom_endpoint` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.gcp_auth_backend.custom_endpoint.new](#fn-custom_endpointnew) constructor.
 
 **Returns**:
@@ -103,6 +105,7 @@ injecting into a complete block.
   - `path` (`string`): Set the `path` field on the resulting object. When `null`, the `path` field will be omitted from the resulting object.
   - `private_key_id` (`string`): Set the `private_key_id` field on the resulting object. When `null`, the `private_key_id` field will be omitted from the resulting object.
   - `project_id` (`string`): Set the `project_id` field on the resulting object. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `tune` (`list`): Set the `tune` field on the resulting object. When `null`, the `tune` field will be omitted from the resulting object.
   - `custom_endpoint` (`list[obj]`): Specifies overrides to service endpoints used when making API requests to GCP. When `null`, the `custom_endpoint` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [vault.gcp_auth_backend.custom_endpoint.new](#fn-custom_endpointnew) constructor.
 
 **Returns**:
@@ -304,6 +307,22 @@ Terraform resource block to set or update the project_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project_id` field.
+
+
+### fn withTune
+
+```ts
+withTune()
+```
+
+`vault.list.withTune` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the tune field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `tune` field.
 
 
 ## obj custom_endpoint
